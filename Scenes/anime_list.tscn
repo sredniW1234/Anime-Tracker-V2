@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bphho5obqg0qf"]
+[gd_scene load_steps=3 format=3 uid="uid://bphho5obqg0qf"]
 
 [ext_resource type="Texture2D" uid="uid://oipshqps4kt7" path="res://Assets/icons/wallpaper.svg" id="1_ieqv7"]
+[ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
 
 [node name="Anime List" type="Control"]
 layout_mode = 3
@@ -25,11 +26,18 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Version: 0.0.1"
+
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-current_tab = 0
+current_tab = 2
 
 [node name="View List" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -69,64 +77,50 @@ popup/item_2/id = 2
 popup/item_3/text = "Load"
 popup/item_3/id = 3
 
-[node name="FilterMenuButton" type="MenuButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
+[node name="AZSortCheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "Filter: All"
+text = "Sort A-Z"
+
+[node name="SortRatingOptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Sort Rating: None"
+popup/item_1/text = "Sort Rating: High to Low"
+popup/item_1/id = 1
+popup/item_2/text = "Sort Rating: Low to High"
+popup/item_2/id = 2
+
+[node name="FilterStatusMenuButton" type="MenuButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Filter by Status"
 flat = false
-item_count = 8
-popup/item_0/text = "Filter: Complete"
+item_count = 7
+popup/item_0/text = "Complete"
 popup/item_0/checkable = 1
-popup/item_1/text = "Filter: Watching"
+popup/item_1/text = "Watching"
 popup/item_1/checkable = 1
 popup/item_1/id = 1
-popup/item_2/text = "Filter: Ongoing"
+popup/item_2/text = "On Hold"
 popup/item_2/checkable = 1
 popup/item_2/id = 2
-popup/item_3/text = "Filter: On Hold"
+popup/item_3/text = "Ongoing"
 popup/item_3/checkable = 1
 popup/item_3/id = 3
-popup/item_4/text = "Filter: Started"
+popup/item_4/text = "Dropped"
 popup/item_4/checkable = 1
 popup/item_4/id = 4
-popup/item_5/text = "Filter: Dropped"
+popup/item_5/text = "Planned"
 popup/item_5/checkable = 1
 popup/item_5/id = 5
-popup/item_6/text = "Filter: No Status"
+popup/item_6/text = "All"
 popup/item_6/checkable = 1
 popup/item_6/id = 6
-popup/item_7/text = "Filter: Favcorite"
-popup/item_7/checkable = 1
-popup/item_7/id = 7
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
+[node name="FilterGenreMenuButton" type="MenuButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/PanelContainer2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-text = "Filter ratings less than #/10.0:"
-
-[node name="HSlider" type="HSlider" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(250, 15)
-layout_mode = 2
-size_flags_vertical = 4
-max_value = 10.0
-step = 0.5
-rounded = true
-tick_count = 10
-ticks_on_borders = true
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="CollapseCheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/PanelContainer"]
-layout_mode = 2
-text = "Toggle Collapse"
+text = "Filter by Genre"
+flat = false
 
 [node name="Tree" type="Tree" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer"]
 layout_mode = 2
@@ -185,6 +179,11 @@ layout_mode = 2
 placeholder_text = "Name Goes Here"
 
 [node name="List Stats" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="ViewListConcept" type="Sprite2D" parent="PanelContainer/MarginContainer"]
+visible = false
+position = Vector2(368, 285)
+scale = Vector2(0.453333, 0.453333)
+texture = ExtResource("2_03v5c")
