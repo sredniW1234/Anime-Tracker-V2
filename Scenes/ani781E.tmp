@@ -208,5 +208,4 @@ position = Vector2(368, 285)
 scale = Vector2(0.453333, 0.453333)
 texture = ExtResource("2_03v5c")
 
-[connection signal="item_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/Add" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_add_pressed"]

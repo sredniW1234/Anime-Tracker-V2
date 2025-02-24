@@ -1,0 +1,107 @@
+{
+	"List Name": "My Manga List",
+	"List Data": {
+		"Unordinary^0": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Unordinary S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": true
+				},
+				"Unordinary S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Unordinary S3^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Behind the Supermarket, Smoking with You^1": {
+			"Status": "ongoing",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "45/45",
+			"Rating": "8.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "2/13/2025",
+			"Date Ended": "2/15/2025",
+			"Is Book": true,
+			"Children": {
+
+			}
+		},
+		"Blooming Love^2": {
+			"Status": "ongoing",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "44/44",
+			"Rating": "9/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "2/7/2025",
+			"Date Ended": "2/12/2025",
+			"Is Book": true,
+			"Children": {
+
+			}
+		},
+		"Oversummoned, Overpowered, and Over It^3": {
+			"Status": "ongoing",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "42/42",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "2/12/2025",
+			"Date Ended": "2/13/2025",
+			"Is Book": true,
+			"Children": {
+
+			}
+		}
+	}
+}
