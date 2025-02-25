@@ -1,8 +1,8 @@
 extends Tree
 
 var root: TreeItem = null
-var root_item: Item = null
-var currently_selected: Item = null
+var root_item: GeneralItem = null
+var currently_selected: GeneralItem = null
 var list = {}  # {Series Name Item: [Seasons], ...}
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +22,7 @@ func _ready() -> void:
 	hide_root = true
 	
 	root = create_item()
-	root_item = Item.new()
+	root_item = GeneralItem.new()
 	root_item.create(root, "root")
 	#list[root_item] = {}
 
@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 
 
 # Create and add the item to the list
-func add_item(parent: Item, item_name: String):
-	var item = Item.new()
+func add_item(parent: GeneralItem, item_name: String):
+	var item = GeneralItem.new()
 	if parent.tree_item == root_item.tree_item:  # First level (Series Name)
 		item.create(parent.tree_item, item_name)
 		if parent not in list.keys():
@@ -43,20 +43,14 @@ func add_item(parent: Item, item_name: String):
 		item.create(parent.tree_item, item_name)
 		list[parent].append(item)
 	else:
-		print(list)
-		print(parent, parent.parent, root_item.tree_item)
 		item.create(parent.parent, item_name)
-		list[list.keys()[parent.get_index()]].append(item)
-		#print(list, list.keys()[parent.get_index()])
+		list[list.keys()[parent.parent.get_index()]].append(item)
 
 
 func _on_add_pressed() -> void:
 	self.add_item(currently_selected if currently_selected else root_item, str(randf()))
-	#print(list)
-
 
 func _on_item_selected() -> void:
-	#print(get_selected().get_parent() == root_item.tree_item)
 	var parent = get_selected().get_parent()
 	# Get double parent instead of immediate parent for easier checking
 	# root > root_item > Series > Season
