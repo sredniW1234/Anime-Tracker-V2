@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bphho5obqg0qf"]
+[gd_scene load_steps=6 format=3 uid="uid://bphho5obqg0qf"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
 [ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
+[ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/season_item_inspect_view.tscn" id="3_p4wpx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
 
 [node name="Anime List" type="Control"]
 layout_mode = 3
@@ -19,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jkd2l")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -147,6 +151,9 @@ icon = ExtResource("1_52rcf")
 [node name="Inspect Item" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="SeasonItemInspectView" parent="PanelContainer/MarginContainer/TabContainer/Inspect Item" instance=ExtResource("3_p4wpx")]
+layout_mode = 1
 
 [node name="List Stats" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
 visible = false
