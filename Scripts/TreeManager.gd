@@ -2,7 +2,6 @@ extends Tree
 
 var root: TreeItem = null
 var root_item: GeneralItem = null
-var currently_selected: GeneralItem = null
 var list = {}  # {Series Name Item: [Seasons], ...}
 
 # Called when the node enters the scene tree for the first time.
@@ -48,16 +47,16 @@ func add_item(parent: GeneralItem, item_name: String):
 
 
 func _on_add_pressed() -> void:
-	self.add_item(currently_selected if currently_selected else root_item, str(randf()))
+	self.add_item(Manager.currently_selected if Manager.currently_selected else root_item, str(randf()))
 
 func _on_item_selected() -> void:
 	var parent = get_selected().get_parent()
 	# Get double parent instead of immediate parent for easier checking
 	# root > root_item > Series > Season
 	if parent.get_parent() == root:  # Level 1 (Series Name)
-		currently_selected = list.keys()[get_selected().get_index()]
+		Manager.currently_selected = list.keys()[get_selected().get_index()]
 	elif parent.get_parent() == root_item.tree_item:  # Level 2 (Season Name)
 		# Get parent in list keys > [] > get item in list > Item
-		currently_selected = list[list.keys()[parent.get_index()]][get_selected().get_index()]
+		Manager.currently_selected = list[list.keys()[parent.get_index()]][get_selected().get_index()]
 	else:
-		currently_selected = null
+		Manager.currently_selected = null

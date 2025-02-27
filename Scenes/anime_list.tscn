@@ -39,10 +39,9 @@ text = "Version: 0.0.1"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 
 [node name="View List" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -142,13 +141,27 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Add" type="Button" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemTypeOption" type="OptionButton" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer"]
+layout_mode = 2
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Season Item"
+popup/item_1/text = "Movie Item"
+popup/item_1/id = 1
+popup/item_2/text = "Book Item"
+popup/item_2/id = 2
+
+[node name="AddButton" type="Button" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Add A New Item To The List"
 theme_override_constants/icon_max_width = 64
 icon = ExtResource("1_52rcf")
 
 [node name="Inspect Item" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -167,4 +180,4 @@ scale = Vector2(0.453333, 0.453333)
 texture = ExtResource("2_03v5c")
 
 [connection signal="item_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_selected"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/Add" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_add_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer/AddButton" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_add_pressed"]
