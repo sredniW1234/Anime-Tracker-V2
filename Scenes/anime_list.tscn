@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bphho5obqg0qf"]
+[gd_scene load_steps=10 format=3 uid="uid://bphho5obqg0qf"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
+[ext_resource type="Script" path="res://Scripts/item_type_option.gd" id="2_0srl7"]
 [ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
+[ext_resource type="Texture2D" uid="uid://ban3wrrrbvouj" path="res://Assets/icons/series.svg" id="3_p4swl"]
 [ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/season_item_inspect_view.tscn" id="3_p4wpx"]
+[ext_resource type="Texture2D" uid="uid://csbqc8m2n7huu" path="res://Assets/icons/movie.svg" id="3_yjbxd"]
+[ext_resource type="Texture2D" uid="uid://ce37y3t0psfho" path="res://Assets/icons/book.svg" id="5_wicgw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
 
@@ -129,6 +133,8 @@ flat = false
 [node name="Tree" type="Tree" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+drop_mode_flags = 3
+select_mode = 1
 script = ExtResource("1_3oy5k")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/TabContainer/View List"]
@@ -146,13 +152,19 @@ layout_mode = 2
 
 [node name="ItemTypeOption" type="OptionButton" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/icon_max_width = 32
+selected = 0
 fit_to_longest_item = false
 item_count = 3
 popup/item_0/text = "Season Item"
+popup/item_0/icon = ExtResource("3_p4swl")
 popup/item_1/text = "Movie Item"
+popup/item_1/icon = ExtResource("3_yjbxd")
 popup/item_1/id = 1
 popup/item_2/text = "Book Item"
+popup/item_2/icon = ExtResource("5_wicgw")
 popup/item_2/id = 2
+script = ExtResource("2_0srl7")
 
 [node name="AddButton" type="Button" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer"]
 layout_mode = 2

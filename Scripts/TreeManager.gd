@@ -26,14 +26,10 @@ func _ready() -> void:
 	#list[root_item] = {}
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 # Create and add the item to the list
 func add_item(parent: GeneralItem, item_name: String):
-	var item = GeneralItem.new()
+	var item: GeneralItem = Manager.TYPES[Manager.add_type].new()
+	
 	if parent.tree_item == root_item.tree_item:  # First level (Series Name)
 		item.create(parent.tree_item, item_name)
 		if parent not in list.keys():
@@ -47,7 +43,8 @@ func add_item(parent: GeneralItem, item_name: String):
 
 
 func _on_add_pressed() -> void:
-	self.add_item(Manager.currently_selected if Manager.currently_selected else root_item, str(randf()))
+	self.add_item(Manager.currently_selected if Manager.currently_selected else root_item, "CHANGE ME!")
+
 
 func _on_item_selected() -> void:
 	var parent = get_selected().get_parent()
