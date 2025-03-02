@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/item_type_option.gd" id="2_0srl7"]
 [ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
 [ext_resource type="Texture2D" uid="uid://ban3wrrrbvouj" path="res://Assets/icons/series.svg" id="3_p4swl"]
-[ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/season_item_inspect_view.tscn" id="3_p4wpx"]
+[ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/item_inspect_view.tscn" id="3_p4wpx"]
 [ext_resource type="Texture2D" uid="uid://csbqc8m2n7huu" path="res://Assets/icons/movie.svg" id="3_yjbxd"]
 [ext_resource type="Texture2D" uid="uid://ce37y3t0psfho" path="res://Assets/icons/book.svg" id="5_wicgw"]
 
@@ -39,7 +39,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Version: 0.0.1"
+text = "Version: 0.1 PRE-ALPHA"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -133,7 +133,8 @@ flat = false
 [node name="Tree" type="Tree" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-drop_mode_flags = 3
+columns = 3
+column_titles_visible = true
 select_mode = 1
 script = ExtResource("1_3oy5k")
 
