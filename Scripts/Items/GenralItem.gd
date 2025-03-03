@@ -25,6 +25,8 @@ var rating: float  # Rating out of 10
 var is_favorite: bool  # Is this item favorited
 var genre: Array[String]
 
+var auto_track: bool = true  # Whether or not to autotrack this item
+
 # Create Item
 func create(item_parent: TreeItem, _item_name: String) -> TreeItem:
 	parent = item_parent
