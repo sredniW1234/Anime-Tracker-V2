@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d17y3ge8ar1r3"]
+
+[ext_resource type="Script" path="res://Scripts/ContextMenu.gd" id="1_202dc"]
+
+[node name="ContextMenu" type="Node2D"]
+script = ExtResource("1_202dc")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+visible = true
+unfocusable = true
+theme_override_constants/icon_max_width = 20

@@ -2,7 +2,6 @@ extends Tree
 
 var root: TreeItem = null
 var root_item: GeneralItem = null
-var list = {}  # {Series Name Item: [Seasons], ...}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,9 +14,9 @@ func _ready() -> void:
 	set_column_expand(0, true)
 	set_column_expand(1, true)
 	set_column_expand(2, true)
-	set_column_expand_ratio(0, 10)
-	set_column_expand_ratio(1, 3)
-	set_column_expand_ratio(2, 2)
+	set_column_expand_ratio(0, 5)
+	set_column_expand_ratio(1, 4)
+	set_column_expand_ratio(2, 0)
 	hide_root = true
 	
 	root = create_item()
@@ -32,14 +31,17 @@ func add_item(parent: GeneralItem, item_name: String):
 	
 	if parent.tree_item == root_item.tree_item:  # First level (Series Name)
 		item.create(parent.tree_item, item_name)
-		if parent not in list.keys():
-			list[item] = []
+		if parent not in Manager.ordered_list_keys:
+			Manager.list[item] = []
+			Manager.ordered_list_keys.append(item)
 	elif parent.parent == root_item.tree_item:
 		item.create(parent.tree_item, item_name)
-		list[parent].append(item)
+		Manager.list[parent].append(item)
 	else:
 		item.create(parent.parent, item_name)
-		list[list.keys()[parent.parent.get_index()]].append(item)
+		Manager.list[Manager.ordered_list_keys[parent.parent.get_index()]].append(item)
+	
+	item.update_data()
 
 
 func _on_add_pressed() -> void:
@@ -51,9 +53,9 @@ func _on_item_selected() -> void:
 	# Get double parent instead of immediate parent for easier checking
 	# root > root_item > Series > Season
 	if parent.get_parent() == root:  # Level 1 (Series Name)
-		Manager.currently_selected = list.keys()[get_selected().get_index()]
+		Manager.currently_selected = Manager.ordered_list_keys[get_selected().get_index()]
 	elif parent.get_parent() == root_item.tree_item:  # Level 2 (Season Name)
 		# Get parent in list keys > [] > get item in list > Item
-		Manager.currently_selected = list[list.keys()[parent.get_index()]][get_selected().get_index()]
+		Manager.currently_selected = Manager.list[Manager.ordered_list_keys[parent.get_index()]][get_selected().get_index()]
 	else:
 		Manager.currently_selected = null
