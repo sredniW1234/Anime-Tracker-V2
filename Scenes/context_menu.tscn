@@ -2,10 +2,17 @@
 
 [ext_resource type="Script" path="res://Scripts/ContextMenu.gd" id="1_202dc"]
 
-[node name="ContextMenu" type="Node2D"]
+[node name="ContextMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_202dc")
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
-visible = true
-unfocusable = true
 theme_override_constants/icon_max_width = 20
+allow_search = false
+
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]

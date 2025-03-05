@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	root = create_item()
 	root_item = GeneralItem.new()
-	root_item.create(root, "root")
+	root_item.create(root, Manager.list_name)
 	#list[root_item] = {}
 
 
@@ -39,7 +39,7 @@ func add_item(parent: GeneralItem, item_name: String):
 		Manager.list[parent].append(item)
 	else:
 		item.create(parent.parent, item_name)
-		Manager.list[Manager.ordered_list_keys[parent.parent.get_index()]].append(item)
+		Manager.list[Manager.list.keys()[parent.parent.get_index()]].append(item)
 	
 	item.update_data()
 
@@ -59,3 +59,10 @@ func _on_item_selected() -> void:
 		Manager.currently_selected = Manager.list[Manager.ordered_list_keys[parent.get_index()]][get_selected().get_index()]
 	else:
 		Manager.currently_selected = null
+	
+	print(Manager.currently_selected)
+
+
+func _on_nothing_selected() -> void:
+	deselect_all()
+	Manager.currently_selected = null

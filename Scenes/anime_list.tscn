@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bphho5obqg0qf"]
+[gd_scene load_steps=11 format=3 uid="uid://bphho5obqg0qf"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/item_inspect_view.tscn" id="3_p4wpx"]
 [ext_resource type="Texture2D" uid="uid://csbqc8m2n7huu" path="res://Assets/icons/movie.svg" id="3_yjbxd"]
 [ext_resource type="Texture2D" uid="uid://ce37y3t0psfho" path="res://Assets/icons/book.svg" id="5_wicgw"]
+[ext_resource type="PackedScene" uid="uid://d17y3ge8ar1r3" path="res://Scenes/context_menu.tscn" id="9_uxrnn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
 
@@ -135,6 +136,7 @@ layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 column_titles_visible = true
+allow_reselect = true
 select_mode = 1
 script = ExtResource("1_3oy5k")
 
@@ -186,11 +188,16 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="ViewListConcept" type="Sprite2D" parent="PanelContainer/MarginContainer"]
+[node name="ViewListConcept" type="Sprite2D" parent="PanelContainer/MarginContainer/TabContainer"]
 visible = false
-position = Vector2(368, 285)
+position = Vector2(363, 280)
 scale = Vector2(0.453333, 0.453333)
 texture = ExtResource("2_03v5c")
 
+[node name="ContextMenu" parent="PanelContainer" instance=ExtResource("9_uxrnn")]
+visible = false
+layout_mode = 2
+
 [connection signal="item_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_selected"]
+[connection signal="nothing_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_nothing_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer/AddButton" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_add_pressed"]

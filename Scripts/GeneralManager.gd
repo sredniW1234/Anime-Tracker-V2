@@ -9,7 +9,7 @@ var add_type: int = 0
 
 var list = {}  # {Series Name Item: [Seasons], ...}
 var ordered_list_keys = []
-
+var list_name = ""
 
 var TYPES = [SeasonItem, MovieItem, BookItem]
 

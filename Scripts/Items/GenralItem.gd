@@ -13,6 +13,7 @@ var item_name: String:  # Name of the item
 		item_name = new_name
 		if tree_item and is_instance_valid(tree_item):
 			tree_item.set_text(0, item_name)
+			name = item_name
 	get:
 		return item_name
 var icon: String = "" # Icon path
@@ -32,28 +33,57 @@ func create(item_parent: TreeItem, _item_name: String) -> TreeItem:
 	tree_item = parent.create_child()
 	item_name = _item_name
 	index = tree_item.get_index()
+	name = item_name
 	
 	return tree_item
 
 # Move this item before the specified TreeItem
 func move_before():
-	if is_instance_valid(tree_item):
+	if is_instance_valid(tree_item) and index > 0:
 		tree_item.move_before(tree_item.get_prev())
 		index = tree_item.get_index()
 		
-	if parent.get_parent() == tree_item.get_tree().get_root():  # Level 1 (Series Name)
-		var prev_item = Manager.ordered_list_keys[index-(1 if index-1 >= 0 else 0)]
-		var curr_item = Manager.ordered_list_keys[index]
-		Manager.ordered_list_keys[index-(1 if index-1 >= 0 else 0)] = curr_item
-		Manager.ordered_list_keys[index] = prev_item
+		var list: Array
+		if parent.get_parent() == tree_item.get_tree().get_root():
+			list = Manager.ordered_list_keys
+		else:
+			list = Manager.list[Manager.ordered_list_keys[parent.get_index()]]
 		
-		
-	else:  # Level 2 (Season Name)
-		# Get parent in list keys > [] > get item in list > Item
-		pass
-	
+		var curr_item = list[index]
+		var prev_item = list[index+1]
+		list[index] = prev_item
+		list[index+1] = curr_item
+			
 # Move this item after the specified TreeItem
 func move_after():
+	var list: Array
+	
 	if is_instance_valid(tree_item):
-		tree_item.move_after(tree_item.get_prev())
-		index = tree_item.get_index()
+		if parent.get_parent() == tree_item.get_tree().get_root():  # 1st level, (Season Name)
+			if index < len(Manager.ordered_list_keys):
+				tree_item.move_after(tree_item.get_next())
+				index = tree_item.get_index()
+				list = Manager.ordered_list_keys
+		else:
+			if index < len(Manager.list[Manager.ordered_list_keys[parent.get_index()]])-1:
+				tree_item.move_after(tree_item.get_next())
+				index = tree_item.get_index()
+				list = Manager.list[Manager.ordered_list_keys[parent.get_index()]]
+		
+		if list:
+			var curr_item = list[index]
+			var next_item = list[index-1]
+			list[index] = next_item
+			list[index-1] = curr_item
+
+
+func delete():
+	if tree_item:
+		Manager.currently_selected = null
+		tree_item.get_tree().deselect_all()
+		tree_item.free()
+		if self in Manager.list.keys():
+			Manager.list.erase(self)
+		else:
+			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
+		queue_free()

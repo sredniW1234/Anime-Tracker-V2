@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://crdf22c6jligh"]
+[gd_scene load_steps=11 format=3 uid="uid://crdf22c6jligh"]
 
 [ext_resource type="Texture2D" uid="uid://oipshqps4kt7" path="res://Assets/icons/wallpaper.svg" id="1_l7gcx"]
 [ext_resource type="Script" path="res://Scripts/ItemInspectView.gd" id="1_wa1ar"]
 [ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="2_e074j"]
 [ext_resource type="Script" path="res://Scripts/DateButton.gd" id="2_rpld4"]
 [ext_resource type="Texture2D" uid="uid://cj4i8hi4uih8m" path="res://Concepts/Inspect List Concept.png" id="2_uqnn7"]
-[ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="3_hmpcg"]
-[ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="4_4wemu"]
 
 [sub_resource type="Image" id="Image_llqfk"]
 data = {
@@ -289,8 +287,8 @@ offset_right = -4.0
 offset_bottom = 31.0
 toggle_mode = true
 script = ExtResource("2_e074j")
-image_normal = ExtResource("3_hmpcg")
-image_pressed = ExtResource("4_4wemu")
+image_normal = null
+image_pressed = null
 
 [node name="Date Ended" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates"]
 layout_mode = 2
@@ -306,8 +304,8 @@ offset_right = -4.0
 offset_bottom = 31.0
 toggle_mode = true
 script = ExtResource("2_e074j")
-image_normal = ExtResource("3_hmpcg")
-image_pressed = ExtResource("4_4wemu")
+image_normal = null
+image_pressed = null
 
 [node name="Spacer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates"]
 layout_mode = 2
