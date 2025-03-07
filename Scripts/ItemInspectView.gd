@@ -3,6 +3,7 @@ extends Control
 var item: GeneralItem = null
 var episodes: float = 0
 var total_episodes: float = 0
+var selected_genres: Array[String] = []
 
 #region Row 1
 @onready var season_name: LineEdit = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/SeasonName
@@ -22,6 +23,10 @@ var total_episodes: float = 0
 
 #region Row 3
 @onready var notes: TextEdit = $MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/Notes
+@onready var genres_panel: Panel = $MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel
+@onready var possible_genres: HFlowContainer = $"MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel/VBoxContainer/ScrollContainer/Possible Genres"
+@onready var genre_flow_container: FlowContainer = $MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/ScrollContainer/GenreFlowContainer
+var genre_option = preload("res://Scenes/genre_button.tscn")
 #endregion
 
 #region Row 4
@@ -33,6 +38,51 @@ var total_episodes: float = 0
 
 func _ready() -> void:
 	Manager.connect("selected_changed", load_view)
+
+
+# Grab the selected genres and set the item's genre
+func set_genres():
+	selected_genres = []
+	
+	for child in genre_flow_container.get_children().slice(1):
+		child.queue_free()
+		
+	for genre_button in possible_genres.get_children():
+		if genre_button.button_pressed:
+			selected_genres.append(genre_button.text)
+			var dupe_genre_button = genre_button.duplicate()
+			dupe_genre_button.button_pressed = false
+			dupe_genre_button.disabled = true
+			genre_flow_container.add_child(dupe_genre_button)
+	item.genres = selected_genres
+
+
+# Load possible genres into the genre container
+func load_genres():
+	var genre_list
+	
+	for child in genre_flow_container.get_children().slice(1) + possible_genres.get_children():
+		child.queue_free()
+	
+	if is_instance_of(item, SeasonItem):
+		genre_list = Manager.POSSIBLE_SEASON_GENRES
+	elif is_instance_of(item, MovieItem):
+		genre_list = Manager.POSSIBLE_MOVIE_GENRES
+	elif is_instance_of(item, BookItem):
+		genre_list = Manager.POSSIBLE_BOOK_GENRES
+		
+	for genre in genre_list:
+		var genre_button = genre_option.instantiate()
+		genre_button.text = genre
+		# Check if the genre is already selected
+		if genre in item.genres:
+			genre_button.button_pressed = true
+			# Make a duplicate and put it in the genre flow container
+			var dupe_genre_button = genre_button.duplicate()
+			dupe_genre_button.button_pressed = false
+			dupe_genre_button.disabled = true
+			genre_flow_container.add_child(dupe_genre_button)
+		possible_genres.add_child(genre_button)
 
 
 func load_view(current_item: GeneralItem):
@@ -47,9 +97,12 @@ func load_view(current_item: GeneralItem):
 	release_schedule_option.hide()
 	spacer_3.hide()
 	status_dropdown.clear()
+	genres_panel.hide()
 	
 	auto_track_toggle.button_pressed = item.auto_track
 	release_schedule_option.select(-1)
+	load_genres()
+	#set_genres()
 	
 	# Item type dependant changes
 	if is_instance_of(item, MovieItem):
@@ -57,9 +110,11 @@ func load_view(current_item: GeneralItem):
 		watch_divider.hide()
 		total_watch.hide()
 		current_watch.value = item.length
+		
 		for status in Manager.POSSIBLE_MOVIE_STATUS:
 			status_dropdown.add_item("Status: " + status.capitalize())
 		status_dropdown.select(Manager.POSSIBLE_MOVIE_STATUS.find(item.status))
+		
 	elif is_instance_of(item, SeasonItem):
 		media_length.text = "Episodes: "
 		episodes = int(item.episodes.split("/")[0])  # Get the current episode count
@@ -68,9 +123,11 @@ func load_view(current_item: GeneralItem):
 		total_watch.value = total_episodes
 		progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 		progress_bar.value *= 100  # Convert decimal to percentage
+		
 		for status in Manager.POSSIBLE_SEASON_STATUS:
 			status_dropdown.add_item("Status: " + status.capitalize())
 		status_dropdown.select(Manager.POSSIBLE_SEASON_STATUS.find(item.status))
+		
 		if item.status == "ongoing":
 			release_schedule_option.show()
 			spacer_3.show()
@@ -90,6 +147,7 @@ func _on_season_name_text_changed(new_text: String) -> void:
 
 
 func _on_current_watch_value_changed(value: float) -> void:
+	# Set the value depending on item type
 	if is_instance_of(item, SeasonItem):
 		episodes = value
 		item.episodes = str(episodes) + "/" + str(total_episodes)
@@ -97,6 +155,7 @@ func _on_current_watch_value_changed(value: float) -> void:
 	elif is_instance_of(item, MovieItem):
 		item.length = value
 		item.update_data()
+		
 	progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 	progress_bar.value *= 100
 
@@ -106,6 +165,7 @@ func _on_total_watch_value_changed(value: float) -> void:
 		total_episodes = value
 		item.episodes = str(episodes) + "/" + str(total_episodes)
 		item.update_data()
+		
 	progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 	progress_bar.value *= 100
 
@@ -141,3 +201,12 @@ func _on_release_schedule_option_item_selected(index: int) -> void:
 	if item:
 		var schedule = release_schedule_option.get_item_text(index).split(": ")[1]
 		item.release_schedule = Manager.SCHEDULE_TO_UNIX[schedule.to_lower()]
+
+
+func _on_add_genres_pressed() -> void:
+	set_genres()
+	genres_panel.hide()
+
+
+func _on_show_genres_pressed() -> void:
+	genres_panel.show()

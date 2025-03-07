@@ -24,7 +24,7 @@ var date_modified: int  # Date item was modified
 var index: int  # Index in tree relative to parent
 var rating: float = 0 # Rating out of 10
 var is_favorite: bool = false # Is this item favorited
-var genre: Array[String] = []
+var genres: Array[String] = []
 var auto_track: bool = true
 
 # Create Item

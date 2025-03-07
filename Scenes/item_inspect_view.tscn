@@ -225,21 +225,45 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="GenreFlowContainer" type="FlowContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/GenreFlowContainer"]
+[node name="GenreFlowContainer" type="FlowContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ShowGenres" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/ScrollContainer/GenreFlowContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Add Genres:"
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Possible Genres" type="HFlowContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-offset_right = 356.0
-offset_bottom = 296.0
+size_flags_vertical = 3
+
+[node name="Possible Genres" type="HFlowContainer" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel/VBoxContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddGenres" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Add Selected Genres"
 
 [node name="Notes" type="TextEdit" parent="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -331,6 +355,8 @@ texture = ExtResource("2_uqnn7")
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer/StatusDropdown" to="." method="_on_status_dropdown_item_selected"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer/CurrentWatch" to="." method="_on_current_watch_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer/TotalWatch" to="." method="_on_total_watch_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/ScrollContainer/GenreFlowContainer/ShowGenres" to="." method="_on_show_genres_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/GenrePanelContainer/MarginContainer/Panel/VBoxContainer/AddGenres" to="." method="_on_add_genres_pressed"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/PanelContainer3/MarginContainer/HBoxContainer/Notes" to="." method="_on_text_edit_text_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/AutoTrackToggle" to="." method="_on_auto_track_toggle_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/ReleaseScheduleOption" to="." method="_on_release_schedule_option_item_selected"]

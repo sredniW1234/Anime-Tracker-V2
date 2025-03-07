@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://utjdx5j6v2t8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc8ry"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyxd0"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 1.0
+bg_color = Color(0.589129, 0.671662, 0.695482, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2205, 0.431608, 0.49, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ggm1"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 1.0
+bg_color = Color(0.513895, 0.598759, 0.623189, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2205, 0.431608, 0.49, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3h5g"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 1.0
+bg_color = Color(0.435294, 0.517647, 0.541176, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2205, 0.431608, 0.49, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GenreButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yc8ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_uyxd0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4ggm1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k3h5g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uyxd0")
+toggle_mode = true
+text = "Genre"
