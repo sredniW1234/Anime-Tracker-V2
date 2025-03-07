@@ -152,6 +152,7 @@ alignment = 1
 [node name="StatusDropdown" type="OptionButton" parent="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
+selected = 0
 item_count = 5
 popup/item_0/text = "Status: Complete"
 popup/item_1/text = "Status: Watching"
