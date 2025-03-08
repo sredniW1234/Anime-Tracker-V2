@@ -87,3 +87,8 @@ func delete():
 		else:
 			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
 		queue_free()
+
+
+# needed
+func update_data():
+	pass

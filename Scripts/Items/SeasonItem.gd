@@ -7,6 +7,7 @@ var status: String:
 		status = new_status
 		update_data()  # Default to completed
 var release_schedule: int  # The release schedule for this item in unix time
+var episodes_rewatched: int = 0  # The amount of episodes rewatched
 var children: Array[GeneralItem]
 
 func update_data():

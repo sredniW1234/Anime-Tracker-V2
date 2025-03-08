@@ -37,11 +37,16 @@ func add_item(parent: GeneralItem, item_name: String):
 	elif parent.parent == root_item.tree_item:
 		item.create(parent.tree_item, item_name)
 		Manager.list[parent].append(item)
+		if "children" in parent:
+			parent.children.append(item)
 	else:
 		item.create(parent.parent, item_name)
 		Manager.list[Manager.list.keys()[parent.parent.get_index()]].append(item)
+		if "children" in parent:
+			parent.children.append(item)
 	
 	item.update_data()
+	parent.update_data()
 
 
 func _on_add_pressed() -> void:
@@ -59,10 +64,12 @@ func _on_item_selected() -> void:
 		Manager.currently_selected = Manager.list[Manager.ordered_list_keys[parent.get_index()]][get_selected().get_index()]
 	else:
 		Manager.currently_selected = null
-	
-	print(Manager.currently_selected)
 
 
 func _on_nothing_selected() -> void:
 	deselect_all()
 	Manager.currently_selected = null
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

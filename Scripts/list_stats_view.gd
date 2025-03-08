@@ -31,16 +31,16 @@ func calculate_stats():
 	var watched_episode_count = 0
 	for season in all_seasons:
 		total_episode_count += int(season.episodes.split("/")[1])
-		watched_episode_count += int(season.episodes.split("/")[0])
-	left.set_item_text(2, "Total Episodes (W/ Rewatched): " + str(total_episode_count))
+		watched_episode_count += int(season.episodes.split("/")[0]) + season.episodes_rewatched
+	left.set_item_text(2, "Total Episodes: " + str(total_episode_count))
 	left.set_item_text(3, "Episodes Watched (W/ Rewatched): " + str(watched_episode_count))
 	# Index 4 is empty seperator
 	left.set_item_text(5, "Movies Watched: " + str(len(all_movies)))
 	
 	var total_movie_watch_hours = 0
 	for movie in all_movies:
-		total_movie_watch_hours += movie.length
-	left.set_item_text(6, "Minutes Watched (W/ Rewatched): " + str(total_movie_watch_hours))
+		total_movie_watch_hours += movie.length * movie.rewatched
+	left.set_item_text(6, "Hours Watched (W/ Rewatched): %dh %dm" % [int(total_movie_watch_hours/60), total_movie_watch_hours%60])
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:

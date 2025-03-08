@@ -9,6 +9,7 @@ var selected_genres: Array[String] = []
 @onready var season_name: LineEdit = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/SeasonName
 @onready var rating_slider: HSlider = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/VBoxContainer/RatingSlider
 @onready var rating_label: Label = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/VBoxContainer/RatingLabel
+@onready var rewatch_spinbox: SpinBox = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/VBoxContainer/RewatchSpinbox
 #endregion
 
 #region Row 2
@@ -44,9 +45,11 @@ func _ready() -> void:
 func set_genres():
 	selected_genres = []
 	
+	# Clear all children
 	for child in genre_flow_container.get_children().slice(1):
 		child.queue_free()
-		
+	
+	# Go through each pressed button and add it to the list
 	for genre_button in possible_genres.get_children():
 		if genre_button.button_pressed:
 			selected_genres.append(genre_button.text)
@@ -61,9 +64,11 @@ func set_genres():
 func load_genres():
 	var genre_list
 	
+	# Clear all children
 	for child in genre_flow_container.get_children().slice(1) + possible_genres.get_children():
 		child.queue_free()
 	
+	# Get the genre list
 	if is_instance_of(item, SeasonItem):
 		genre_list = Manager.POSSIBLE_SEASON_GENRES
 	elif is_instance_of(item, MovieItem):
@@ -71,6 +76,7 @@ func load_genres():
 	elif is_instance_of(item, BookItem):
 		genre_list = Manager.POSSIBLE_BOOK_GENRES
 		
+	# Add each genre to the selction genre list
 	for genre in genre_list:
 		var genre_button = genre_option.instantiate()
 		genre_button.text = genre
@@ -85,6 +91,7 @@ func load_genres():
 		possible_genres.add_child(genre_button)
 
 
+# Load the insepct view
 func load_view(current_item: GeneralItem):
 	item = current_item
 	item.update_data()
@@ -110,6 +117,7 @@ func load_view(current_item: GeneralItem):
 		watch_divider.hide()
 		total_watch.hide()
 		current_watch.value = item.length
+		rewatch_spinbox.value = item.rewatched
 		
 		for status in Manager.POSSIBLE_MOVIE_STATUS:
 			status_dropdown.add_item("Status: " + status.capitalize())
@@ -123,6 +131,7 @@ func load_view(current_item: GeneralItem):
 		total_watch.value = total_episodes
 		progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 		progress_bar.value *= 100  # Convert decimal to percentage
+		rewatch_spinbox.value = item.episodes_rewatched
 		
 		for status in Manager.POSSIBLE_SEASON_STATUS:
 			status_dropdown.add_item("Status: " + status.capitalize())
@@ -131,6 +140,19 @@ func load_view(current_item: GeneralItem):
 		if item.status == "ongoing":
 			release_schedule_option.show()
 			spacer_3.show()
+	elif is_instance_of(item, BookItem):
+		media_length.text = "Pages: "
+		var pages = int(item.pages.split("/")[0])  # Get the current episode count
+		var total_pages = int(item.pages.split("/")[1])  # Get the total episode count
+		current_watch.value = pages
+		total_watch.value = total_pages
+		progress_bar.value = pages/(total_pages if total_pages != 0 else 1.0)
+		progress_bar.value *= 100  # Convert decimal to percentage
+		rewatch_spinbox.value = item.pages_reread
+		
+		for status in Manager.POSSIBLE_BOOK_STATUS:
+			status_dropdown.add_item("Status: " + status.capitalize())
+		status_dropdown.select(Manager.POSSIBLE_BOOK_STATUS.find(item.status))
 
 
 func _on_rating_slider_value_changed(value: float) -> void:
@@ -169,6 +191,7 @@ func _on_total_watch_value_changed(value: float) -> void:
 	progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 	progress_bar.value *= 100
 
+
 func _on_text_edit_text_changed() -> void:
 	if item:
 		item.notes = notes.text
@@ -197,6 +220,7 @@ func _on_status_dropdown_item_selected(index: int) -> void:
 		spacer_3.hide()
 
 
+# Get Schedule in unix time
 func _on_release_schedule_option_item_selected(index: int) -> void:
 	if item:
 		var schedule = release_schedule_option.get_item_text(index).split(": ")[1]
