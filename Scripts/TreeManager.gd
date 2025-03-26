@@ -2,9 +2,11 @@ extends Tree
 
 var root: TreeItem = null
 var root_item: GeneralItem = null
+@onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer.connect("timeout", update_items)
 	# Set tree properties
 	columns = 3
 	column_titles_visible = true
@@ -45,8 +47,8 @@ func add_item(parent: GeneralItem, item_name: String):
 		if "children" in parent:
 			parent.children.append(item)
 	
-	item.update_data()
-	parent.update_data()
+	item.update()
+	parent.update()
 
 
 func _on_add_pressed() -> void:
@@ -71,5 +73,9 @@ func _on_nothing_selected() -> void:
 	Manager.currently_selected = null
 
 
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+func update_items():
+	for parent in Manager.ordered_list_keys:
+		parent.update()
+		for child in Manager.list[parent]:
+			child.update()
+	timer.start(1)

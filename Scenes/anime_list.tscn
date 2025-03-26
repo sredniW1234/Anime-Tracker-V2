@@ -141,6 +141,9 @@ allow_reselect = true
 select_mode = 1
 script = ExtResource("1_3oy5k")
 
+[node name="Timer" type="Timer" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree"]
+autostart = true
+
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/TabContainer/View List"]
 layout_mode = 1
 anchors_preset = 3

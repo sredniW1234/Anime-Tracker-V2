@@ -24,3 +24,17 @@ const POSSIBLE_MOVIE_GENRES = ["Shonen", "Shojo", "Seinen", "Josei", "Action", "
 const SCHEDULE_TO_UNIX = {"weekly": 604800, "bi-weekly": 1209600, "monthly": 2629743}
 
 signal selected_changed(currently_selected: GeneralItem)
+
+
+# Gets Unix time from current date
+func get_date_unix(date_string: String) -> int:
+	var date = date_string.split(": ")[-1].split("/")
+	print(date)
+	var month = ("0" if int(date[0]) < 10 else "") + date[0]
+	var day = ("0" if int(date[1]) < 10 else "") + date[1]
+	var year = date[2]
+	
+	# Format to ISO 8601 format
+	var formatted_date = year + "-" + month + "-" + day
+	var unix = Time.get_unix_time_from_datetime_string(formatted_date)
+	return unix
