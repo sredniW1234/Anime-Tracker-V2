@@ -38,3 +38,14 @@ func get_date_unix(date_string: String) -> int:
 	var formatted_date = year + "-" + month + "-" + day
 	var unix = Time.get_unix_time_from_datetime_string(formatted_date)
 	return unix
+
+
+func save_list(desitination:String):
+	var savefile = FileAccess.open(desitination, FileAccess.WRITE)
+	var data = {}
+	for parent in ordered_list_keys:
+		data[str(parent.index)] = parent.get_data()
+	var json_obj = JSON.new()
+	var data_as_json = JSON.stringify(data, "\t", false)
+	savefile.store_string(data_as_json)
+	savefile.close()

@@ -1,59 +1,78 @@
 {
 	"List Name": "List Name",
-	"1":{
+	"1": {
 		"Name": "Anime name",
 		"Type": "Movie",
 		"Status": "complete",
+		"Genres": [],
 		"Icon": "",
 		"Favorite": false,
 		"Rating": "0/10",
 		"Notes": "",
 		"Movie": 0,
 		"Rewatches": 0,
-		"Date Started": ""
+		"Date Started": "",
+		"Date Modified": "",
+		"Auto Track": true
 	},
-	"2":{
+	"2": {
 		"Name": "Anime name",
-		"Type": "Show",
+		"Type": "Season",
 		"Status": "complete",
+		"Genres": [],
 		"Icon": "",
 		"Favorite": false,
+		"Episodes": "0/0",
 		"Rating": "0/10",
 		"Notes": "",
 		"Rewatches": 0,
 		"Date Started": "",
+		"Date Ended": "",
+		"Date Modified": "",
+		"Auto Track": true,
 		"Children": {
-			"1":{
+			"1": {
 				"Name": "Anime name",
 				"Type": "Season",
-				"Status": "complete",
+				"Status": "ongoing",
+				"Genres": [],
 				"Icon": "",
 				"Favorite": false,
+				"Episodes": "0/0",
 				"Rating": "0/10",
 				"Notes": "",
 				"Rewatches": 0,
 				"Date Started": "",
-				"Date Ended": ""
+				"Date Ended": "",
+				"Date Modified": 0,
+				"Date Release Started": "",
+				"Release Schedule": 604800,
+				"Max Episodes": 0,
+				"Auto Track": true
 			}
 		}
 	},
-	"3":{
+	"3": {
 		"Name": "Manga name",
 		"Type": "Book",
 		"Status": "complete",
+		"Genres": [],
 		"Icon": "",
 		"Favorite": false,
 		"Rating": "0/10",
 		"Notes": "",
+		"Pages": "0/0",
 		"Volumes": 0,
-		"Rereads": 0,
+		"Pages Reread": 0,
 		"Date Started": "",
 		"Date Ended": "",
-		"Children":{
-			"1":{
+		"Date Modified": "",
+		"Children": {
+			"1": {
 				"Name": "Manga Vol.1",
 				"Type": "Chapter",
 				"Status": "complete",
+				"Genres": [],
 				"Icon": "",
 				"Favorite": false,
 				"Rating": "0/10",
@@ -62,7 +81,7 @@
 				"Rereads": 0,
 				"Date Started": "",
 				"Date Ended": ""
-				}
+			}
 		}
 	}
 }

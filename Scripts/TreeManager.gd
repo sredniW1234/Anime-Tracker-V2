@@ -3,6 +3,7 @@ extends Tree
 var root: TreeItem = null
 var root_item: GeneralItem = null
 @onready var timer: Timer = $Timer
+@onready var file_menu_button: MenuButton = $"../MenuBar/MarginContainer/HBoxContainer/FileMenuButton"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +25,7 @@ func _ready() -> void:
 	root = create_item()
 	root_item = GeneralItem.new()
 	root_item.create(root, Manager.list_name)
+	file_menu_button.get_popup().connect("id_pressed", menu_button_selected)
 	#list[root_item] = {}
 
 
@@ -79,3 +81,9 @@ func update_items():
 		for child in Manager.list[parent]:
 			child.update()
 	timer.start(1)
+
+
+func menu_button_selected(id):
+	var selected_text = file_menu_button.get_popup().get_item_text(id)
+	if selected_text == "Save":
+		Manager.save_list("C:\\Users\\winde\\Desktop\\save_data.alt")

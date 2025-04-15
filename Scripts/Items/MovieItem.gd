@@ -14,3 +14,21 @@ func update_data():
 	if is_instance_valid(tree_item):  # Make sure the tree item exists
 		tree_item.set_custom_color(1, STATUS_COLORS[status])
 		tree_item.set_text(1, "Status: %s | Length: %dh %dm | Rating: %.1f/10" % [status, int(length/60), length%60, rating])
+
+func get_data():
+	var data = {
+		"Name": item_name,
+		"Type": "Movie",
+		"Status": status,
+		"Genres": genres,
+		"Icon": icon,
+		"Favorite": is_favorite,
+		"Rating": rating,
+		"Notes": icon,
+		"Length": length,
+		"Rewatches": rewatched,
+		"Date Started": date_started,
+		"Date Modified": date_ended,
+		"Auto Track": auto_track
+	}
+	return data

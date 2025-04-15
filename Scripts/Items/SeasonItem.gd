@@ -39,3 +39,31 @@ func update():
 		if time_since_last_update >= 2629743:  # Update from on hold to dropped if not modified for a month
 			status = "dropped"
 			update_data()
+			
+func get_data():
+	var data = {
+		"Name": item_name,
+		"Type": "Season",
+		"Status": status,
+		"Genres": genres,
+		"Icon": icon,
+		"Favorite": is_favorite,
+		"Episodes": episodes,
+		"Rating": rating,
+		"Notes": notes,
+		"Rewatches": episodes_rewatched,
+		"Date Started": date_started,
+		"Date Ended": date_ended,
+		"Date Modified": date_modified,
+		"Auto Track": auto_track
+	}
+	if status == "ongoing":
+		data.merge({"Date Release Started": date_release_started,
+				"Release Schedule": release_schedule,
+				"Max Episodes": max_episodes})
+	var child_data = {}
+	for child in children:
+		child_data.merge({child.index: child.get_data()})
+	if child_data:
+		data.merge({"Children": child_data})
+	return data
