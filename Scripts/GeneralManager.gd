@@ -45,7 +45,6 @@ func save_list(desitination:String):
 	var data = {}
 	for parent in ordered_list_keys:
 		data[str(parent.index)] = parent.get_data()
-	var json_obj = JSON.new()
 	var data_as_json = JSON.stringify(data, "\t", false)
 	savefile.store_string(data_as_json)
 	savefile.close()

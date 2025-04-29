@@ -51,6 +51,7 @@ func add_item(parent: GeneralItem, item_name: String):
 	
 	item.update()
 	parent.update()
+	return item
 
 
 func _on_add_pressed() -> void:
@@ -82,8 +83,47 @@ func update_items():
 			child.update()
 	timer.start(1)
 
+func load_item(item_properties: Dictionary):
+	var item: GeneralItem = add_item(root_item, item_properties["Name"])
+	# Set all common properties
+	item.status = item_properties["Status"]
+	item.icon = item_properties["Icon"]
+	item.is_favorite = item_properties["Favorite"]
+	item.rating = item_properties["Rating"]
+	item.notes = item_properties["Notes"]
+	item.date_started = item_properties["Date Started"]
+	item.date_modified = item_properties["Date Modified"]
+	item.auto_track = item_properties["Auto Track"]
+	item.genres.append_array(item_properties["Genres"])
+	# Season specific
+	if item_properties.get("Type") == "Season":
+		item.episodes = item_properties["Episodes"]
+		item.episodes_rewatched = item_properties["Rewatches"]
+		item.date_ended = item_properties["Date Ended"]
+		if item.status == "ongoing":
+			item.date_release_started = item_properties["Date Release Started"]
+			item.release_schedule = item_properties["Release_Schedule"]
+			item.max_episodes = item_properties["Max_Episodes"]
+	elif item_properties.get("Type") == "Movie":
+		item.length = item_properties["Movie"]
+		item.rewatches = item_properties["Rewatches"]
+	elif item_properties.get("Type") == "Book":
+		pass
+	return item
+
+func load_tree(save_dict: Dictionary):
+	for i in save_dict.keys():
+		var parent_item_properties: Dictionary = save_dict[i]
+		var parent_item = load_item(parent_item_properties)
+		
+
 
 func menu_button_selected(id):
 	var selected_text = file_menu_button.get_popup().get_item_text(id)
 	if selected_text == "Save":
 		Manager.save_list("C:\\Users\\winde\\Desktop\\save_data.alt")
+	if selected_text == "Load":
+		var file = FileAccess.open("C:\\Users\\winde\\Desktop\\save_data.alt", FileAccess.READ)
+		var content = file.get_as_text()
+		var data = JSON.parse_string(content)
+		load_tree(data)

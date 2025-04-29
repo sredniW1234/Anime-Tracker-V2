@@ -65,6 +65,7 @@ func get_data():
 		"Date Started": date_started,
 		"Date Ended": date_ended,
 		"Date Modified": date_modified,
+		"Auto Track": auto_track
 	}
 	if status == "ongoing":
 		data.merge({"Date Release Started": date_release_started,
