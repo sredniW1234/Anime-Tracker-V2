@@ -5,6 +5,9 @@ const STATUS_COLORS = {"completed":Color(0, 1, 0),
  "watching":Color(0.5, 1, 0.5), "reading":Color(0.5, 1, 0.5),
  "ongoing":Color(1, 0.6, 0), "on hold":Color(0.9, 0.2, 0.9),
  "started":Color(0.5, 0.75, 1), "dropped":Color(1, 0, 0), "":Color(0, 0, 0)}
+const STAR_FILLED = preload("res://Assets/icons/star-filled.png")
+const STAR = preload("res://Assets/icons/star.png")
+
 
 var parent: TreeItem
 var tree_item: TreeItem
@@ -18,14 +21,23 @@ var item_name: String:  # Name of the item
 		return item_name
 var icon: String = "" # Icon path
 var notes: String = "" # Notes for this item
-var date_started: String  # Date item started
-var date_ended: String  # Date item ended
-var date_modified: int  # Date item was modified
+var date_started: String = "Select Start Date"  # Date item started
+var date_ended: String = "Select End Date"  # Date item ended
+var date_modified: int  # Date status was modified in unix
+var status: String:
+	set(new_status):
+		status = new_status
+		update_data()  # Default to completed
 var index: int  # Index in tree relative to parent
 var rating: float = 0 # Rating out of 10
-var is_favorite: bool = false # Is this item favorited
+var is_favorite: bool = false: # Is this item favorited
+	set(favortie):
+		is_favorite = favortie
+		update_data()
+		
 var genres: Array[String] = []
 var auto_track: bool = true
+
 
 # Create Item
 func create(item_parent: TreeItem, _item_name: String) -> TreeItem:
@@ -36,6 +48,7 @@ func create(item_parent: TreeItem, _item_name: String) -> TreeItem:
 	name = item_name
 	
 	return tree_item
+
 
 # Move this item before the specified TreeItem
 func move_before():
@@ -53,7 +66,8 @@ func move_before():
 		var prev_item = list[index+1]
 		list[index] = prev_item
 		list[index+1] = curr_item
-			
+
+
 # Move this item after the specified TreeItem
 func move_after():
 	var list: Array
@@ -77,6 +91,44 @@ func move_after():
 			list[index-1] = curr_item
 
 
+# Unparents the item to the root
+func unparent():
+	if tree_item:
+		if parent.get_parent() != tree_item.get_tree().get_root():
+			# Remove old tree item
+			tree_item.free()
+			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
+			var correct_index = parent.get_index() + 1  # Get correct position after reparent
+			create(parent.get_parent(), item_name)
+			if parent not in Manager.ordered_list_keys:
+				Manager.list[self] = []
+				Manager.ordered_list_keys.append(self)
+			
+			while index != correct_index:
+				move_before()
+			update_data()
+
+
+func re_parent():  # reparent already exists but we want new functionality. I think.
+	if tree_item:
+		if parent.get_parent() == tree_item.get_tree().get_root():  # We are level 1
+			if index != len(Manager.ordered_list_keys) - 1:
+				# Remove old tree item
+				tree_item.free()
+				Manager.ordered_list_keys.erase(self)
+				Manager.list.erase(self)
+				
+				# Get parent
+				var new_parent = Manager.ordered_list_keys[index]
+				create(new_parent.tree_item, item_name)
+				
+				# Update List
+				Manager.list[new_parent].append(self)
+				if "children" in new_parent:
+					new_parent.children.append(self)
+				update_data()
+
+
 func delete():
 	if tree_item:
 		Manager.currently_selected = null
@@ -91,4 +143,9 @@ func delete():
 
 # needed
 func update_data():
+	pass
+
+
+# Update item based on time
+func time_update():
 	pass

@@ -1,0 +1,3082 @@
+{
+	"List Name": "My Anime List",
+	"List Data": {
+		"Demon Slayer^0": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Demon Slayer S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Demon Slayer S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Demon Slayer S3^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Demon Slayer: Mugen Train (Movie)^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Sword Art Online^1": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Sword Art Online^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sword Art Online II^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sword Art Online Alicization^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sword Art Online Alicization: War of the Underworld^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Seven Deadly Sins^2": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Seven Deadly Sins S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Seven Deadly Sins S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Seven Deadly Sins S3^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Seven Deadly Sins S4^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Re:Zero -Starting Life In Another World^3": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Bubble^4": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Assasination Classroom^5": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Assasination Classroom S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Assasination Classroom S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"The Rising of the Shield Hero^6": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"The Rising of the Shield Hero S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"The Rising of the Shield Hero S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"The Rising of the Shield Hero S3^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Naruto^7": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Naruto^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Naruto Shippuden^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Death Note^8": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Toradora!^9": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"One Punch Man^10": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"The Way Of The Househusband^11": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"The Way Of The Househusband S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"The Way Of The Househusband S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"High Rise Invasion^12": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"A Lull In The Sea^13": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Little Witch Academy^14": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Classroom Of The Elite^15": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Classroom Of The Elite S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Classroom Of The Elite S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Happy Sugar Life^16": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "7.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Durarara!^17": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "38/50",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Durarara!X1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "24/24",
+					"Rating": "8/10",
+					"Notes": "A little wierd towards the begining and the dub VA for Mikado is a bit strange, but not bad overall. Very interesting story with good ideas.",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Durarara!X2^1": {
+					"Status": "on hold",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/24",
+					"Rating": "7/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Durarara!X1 Specials^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "2/2",
+					"Rating": "7/10",
+					"Notes": "First episode is a bit confusing and the second is very cringe but overall not bad. Second episode is miles better than the first one however.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Kakegurui^18": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Boogiepop Or Others^19": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Hunter X Hunter^20": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Hunter X Hunter S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Hunter X Hunter S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Hunter X Hunter S3^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Hunter X Hunter S4^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Hunter X Hunter S5^4": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Hunter X Hunter S6^5": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Attack On Titan^21": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Bunny Girl Senpai^22": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Vampire Knight (99%)^23": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Erased^24": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"A Silent Voice^25": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "0/0",
+			"Rating": "9.5/10",
+			"Notes": "",
+			"Movie": 129,
+			"Rewatches": 4,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Komi Can't Communicate^26": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Black Clover^27": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Kotaro Lives Alone^28": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"SPRIGGAN^29": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Darling In The Franxx^30": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"My Stepmom's Daughter Is My Ex^31": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Spy X Family^32": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "37/37",
+			"Rating": "10/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Spy X Family S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Spy X Family S1 P2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "13/13",
+					"Rating": "8/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Spy X Family S2^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Spy x Family Code: White^3": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "10/10",
+					"Notes": "10/10",
+					"Movie": 110,
+					"Rewatches": 0,
+					"Date Started": "12/5/2024",
+					"Date Ended": "12/5/2024",
+					"Is Book": false
+				}
+			}
+		},
+		"Odd taxi^33": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Tokyo Ghoul^34": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Overlord^35": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Overlord S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Overlord S2^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Overlord S3^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Overlord S4^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Made In Abyss^36": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Darwin’s Game^37": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Baccano!^38": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Date a Live^39": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"My Dress-Up Darling^40": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"My Dress-Up Darling S1^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Hyouka ^41": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Hyouka^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Hyouka OVA^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Problem Children Are Coming From Another World, Aren't They?^42": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Corpse Party: Tortured Souls^43": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Rent-a-Girlfriend^44": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "36/36",
+			"Rating": "9/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Rent-a-Girlfriend S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "8/10",
+					"Notes": "The 3-4 begining were pretty mid but the rest was great. Truely Amazing\nAlso, Kazuya is AN IDIOT!!!!!!!!!!",
+					"Movie": 0,
+					"Rewatches": 2,
+					"Date Started": "12/2/2024",
+					"Date Ended": "12/3/2024",
+					"Is Book": false
+				},
+				"Rent-a-Girlfriend S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "8/10",
+					"Notes": "LETS GO KAZUYA!!!!!!!!!!!!!!! REDEMPTION ARC!!!!!!!!!!!!!!!!!",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "12/3/2024",
+					"Date Ended": "12/4/2024",
+					"Is Book": false
+				},
+				"Rent-a-Girlfriend S3 ^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9.5/10",
+					"Notes": "SOO AMAZING!!!!!!!!!!!! I LOVED IT!!!!!!!!!! NEED SEASON 4 NOW!!!!!!!!!!!!!!!!!! PLZ",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "12/4/2024",
+					"Date Ended": "12/5/2024",
+					"Is Book": false
+				}
+			}
+		},
+		"Romantic Killer^45": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Forest Piano^46": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Drifting Home^47": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Initial D^48": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Initial D First stage^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Initial D Second stage^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Initial D Extra stage^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Initial D Third stage^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"A.I.C.O^49": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Charlotte^50": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "14/14",
+			"Rating": "8.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Charlotte S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "13/13",
+					"Rating": "8.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "11/30/2024",
+					"Date Ended": "11/30/2024",
+					"Is Book": false
+				},
+				"Charlotte: Tsuyoimono-tachi^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "1/1",
+					"Rating": "8.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "11/30/2024",
+					"Date Ended": "11/30/2024",
+					"Is Book": false
+				}
+			}
+		},
+		"Beyond the Boundary^51": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Call of the Night^52": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"To Your Eternity^53": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"And You Thought There is Never a Girl Online?^54": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Tomo-Chan is a Girl!^55": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "13/13",
+			"Rating": "8.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 1,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Inu X Boku Secret Service^56": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"My Hero Academia^57": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "88/88",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"My Hero Academia S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "13/13",
+					"Rating": "8/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"My Hero Academia S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "25/25",
+					"Rating": "8.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"My Hero Academia S3^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "25/25",
+					"Rating": "7.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"My Hero Academia S4^3": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "25/25",
+					"Rating": "8/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Jujutsu Kaisen^58": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Jujutsu Kaisen^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Jujutsu Kaisen S1^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Jujutsu Kaisen S2^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Jujutsu Kaisen S2P2^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Kokoro Connect ^59": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Kokoro Connect^0": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Kokoro Connect OVA^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Yozakura Quartet^60": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Ghost Stories^61": {
+			"Status": "",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Reborn As a Vending Machine^62": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "7/12",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Oshi No Ko^63": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "24/24",
+			"Rating": "10/10",
+			"Notes": "WHY DID AI HAVE TO DIE!?!?!?!??! I hate this. The anime is so good though. I can't wait for s3 - 1/11/2025",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Oshi No Ko S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "11/11",
+					"Rating": "9/10",
+					"Notes": "Took a long break\nI'm 100% with Aqua, WHO THE HELL DID AI LIKE!? I must know. Also, top tier",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "1/9/2025",
+					"Is Book": false
+				},
+				"Oshi no ko S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "13/13",
+					"Rating": "10/10",
+					"Notes": "THIS IT TOP TIER!!!!!!!!\nWhy did Aqua want to kill his father? Does he not know that it was someone else who killed Ai?\nAlso, LETS GO DARK RUBY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAlso, Aqua likes Akane? What's going to happen with Kana? I NEED A S3!",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "1/10/2025",
+					"Date Ended": "1/10/2025",
+					"Is Book": false
+				}
+			}
+		},
+		"Don’t Toy With Me Miss Nagatoro^64": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "24/24",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Don't Toy With Me Miss Nagatoro S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "8.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Don’t Toy With Me Miss Nagatoro S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "8.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Chainsaw Man^65": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"No Game No Life^66": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"The Devil is a Part-Timer^67": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "37/37",
+			"Rating": "8.5/10",
+			"Notes": "Great concept and I really enjoyed watching it. I wonder if it'll get a fourth season?",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"The Devil is a Part-Timer S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "13/13",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"The Devil is a Part-Timer S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"The Devil is a Part-Timer S3^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Buddy Daddies^68": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Cautious Hero: The Hero Is Overpowered but Overly Cautious^69": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "7/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"My Happy Marriage^70": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "9/12",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Uzaki-chan Wants to Hang Out!^71": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/12",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"One Piece^72": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "228/1112",
+			"Rating": "0/10",
+			"Notes": "THE ONE PIECE IS REAL!!!",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Bocchi The Rock^73": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "10/10",
+			"Notes": "BYOOOWWWMMMMM!",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"ID: Invaded^74": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "13/13",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Words bubble up like soda pop^75": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "9/10",
+			"Notes": "",
+			"Movie": 87,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Eminence in Shadow^76": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "32/32",
+			"Rating": "9.5/10",
+			"Notes": "It's great although the fan service can be a little much, especially with the second season.\nI wonder, how did alpha find the other 6 shadows and how did they find the subordinates? I'd probably have to read the manga.\n",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Eminence in Shadow S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "20/20",
+					"Rating": "9/10",
+					"Notes": "rewatched: 12/31/2024 - 1/2/2025",
+					"Movie": 0,
+					"Rewatches": 1,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Eminence in Shadow S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9.5/10",
+					"Notes": "What happened back at regular earth? Also WHAT? This is great.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "1/2/2025",
+					"Date Ended": "1/2/2025",
+					"Is Book": false
+				}
+			}
+		},
+		"Mashle: Magic and Muscles^77": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "24/24",
+			"Rating": "10/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Mashle: Magic and Muscles S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Mashle: Magic and Muscles S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Delicious in Dungeon^78": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "7/24",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Baki Hanme^79": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "0/0",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Solo Leveling^80": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "13/24",
+			"Rating": "10/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Solo Leveling S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "10/10",
+					"Notes": "This is SOOO GOOOD",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Solo Leveling S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "1/12",
+					"Rating": "8/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "1/4/2025",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"That Time I Got Reincarnated as a Slime^81": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "65/65",
+			"Rating": "9/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Reincarnated as a Slime S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "24/24",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "10/4/2024",
+					"Is Book": false
+				},
+				"Reincarnated as a Slime OAD^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "5/5",
+					"Rating": "9/10",
+					"Notes": "Pretty good, adds some interesting character development.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Reincarnated as a Slime S2 P1^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "ep3: rip Rimuru. bro got caught lacking",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Reincarnated as a Slime S2 P2^3": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Reincarnated as a Slime: Slime Diaries^4": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "7.5/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Dr. Stone ^82": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "36/36",
+			"Rating": "8.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Dr. Stone S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "24/24",
+					"Rating": "8/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Dr. Stone S2^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Dragon Pilot^83": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8/10",
+			"Notes": "It was a nice story",
+			"Movie": 0,
+			"Rewatches": 2,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Sirius the Jaeger^84": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Tomodachi Game^85": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "10/10",
+			"Notes": "Each episode was an adventure, this requires a second season, especially due to the cliff hanger. I'm convinced that it will get a second season",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Cyberpunk: Edgerunners^86": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "10/10",
+			"Rating": "10/10",
+			"Notes": "Made me tear up and almost cry. Why did he have to go cyberphsyco????????????",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Alya sometimes Hides Her Feelings in Russian^87": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "12/12",
+			"Rating": "10/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Alya sometimes Hides Her Feelings in Russian S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "12/12",
+					"Rating": "10/10",
+					"Notes": "Just amazing adaptation of the manga. The animation is also baffeling not to mention the va's for both the sub and dub. ",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Shikanoko Nokonoko Koshitantan^88": {
+			"Status": "on hold",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "8/12",
+			"Rating": "9.5/10",
+			"Notes": "Just a catchy fever dream",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Kaguya-Sama^89": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "42/42",
+			"Rating": "10/10",
+			"Notes": "LOVED IT!!! It was amazing to see the story and characters progress so much although they were at a complete standstill for some time. So many missed opportunities and close calls but fun to watch. Would highly recommend.",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Kaguya-sama: Love is War^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "10/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Kaguya-sama: Love is War OVA^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "1/1",
+					"Rating": "7/10",
+					"Notes": "First two thirds were very weird and lewd. The cookoff was pretty good.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Kaguya-sama: Love Is War?^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "10/10",
+					"Notes": "We get a look into Ishigami's past + sports festival! Great season",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Kaguya-sama  Love is War: Ultra Romantic^3": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "13/13",
+					"Rating": "10/10",
+					"Notes": "Arguably the best season. The school festival was so neat! Amazing gesture by Shirogane. Also KISS!",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Kaguya-sama: Love is War - The First Kiss That Never Ends^4": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "4/4",
+					"Rating": "10/10",
+					"Notes": "THEY CONFESS DURING CHRISTMAS!!! TRUE BF AND GF!!! Great movie/season",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Konosuba: God's Blessing on This Wonderful World!^90": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "45/45",
+			"Rating": "9/10",
+			"Notes": "Interesting concept so far. An isekai but the fantasy world is somewhat actually reality based. The characters are weird though.",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Konosuba: God's Blessing on This Wonderful World! S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "10/10",
+					"Rating": "8.5/10",
+					"Notes": "Sooooooooo weeiirrrdd. Very pervy but also funny",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "July 23, 2024",
+					"Date Ended": "July 23, 2024",
+					"Is Book": false
+				},
+				"Konosuba: God's Blessing on This Wonderful World! OVA^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "1/1",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Konosuba: God's Blessing on This Wonderful World! S2^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "10/10",
+					"Rating": "10/10",
+					"Notes": "Much less lewd compared to the first season but still extremely funny. Probably my faveorite season of this show.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Konosuba: God's Blessing on This Wonderful World! OVA 2^3": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "1/1",
+					"Rating": "7/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Konosuba: God's Blessing on This Wonderful World! - Legend of Crimson^4": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "10/10",
+					"Notes": "Very funny and amazing animations. Not to mentions the explosions too. just a great Movie",
+					"Movie": 90,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Konosuba: An Explosion on This Wonderful World!^5": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "7.5/10",
+					"Notes": "Covers Megumin's story before meeting the group. Pretty good honestly although a bit slow.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"KonoSuba: God's Blessing on This Wonderful World! S3^6": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "11/11",
+					"Rating": "9.5/10",
+					"Notes": "So far my favorite season.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"The Daily Life of an Immortal King^91": {
+			"Status": "dropped",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "2/10",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Mieruko-chan^92": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8.5/10",
+			"Notes": "I like the concept, although a bit slow. It ended on a good stopping place but having another season would be nice. Would recommend.",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Wind Breaker^93": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "13/13",
+			"Rating": "9/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Wind Breaker S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "13/13",
+					"Rating": "9/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Frieren^94": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "28/28",
+			"Rating": "9.5/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Frieren: Beyond Journey's End^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "28/28",
+					"Rating": "9.5/10",
+					"Notes": "Last bit of ep 10 was NASTY!!!!\nEp 12 is great\nEp 14 frieren got proposed to????? AND SHE FUMBLED????? Rip Himmel. Stark and Fern",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		},
+		"Akame ga kill!^95": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "24/24",
+			"Rating": "9/10",
+			"Notes": "Great anime\nWHY DID TATSUMI HAVE TO DIE THE IDIOT\nEnding was not the best but it was good\nRIP Tatsumi, Bulat, Lubbock, Chelsea, Leone, Sheele, Mine, and Susanoo",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "9/24/2024",
+			"Date Ended": "10/3/2024",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Dandadan^96": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "12/12",
+			"Rating": "10/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "11/9/2024",
+			"Date Ended": "12/19/2024",
+			"Is Book": false,
+			"Children": {
+				"Dandadan S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": true,
+					"Segment": "12/12",
+					"Rating": "10/10",
+					"Notes": "Episode 8 is wild\nEpisode 9: Thanks for not having us see the \"getting captured naked and on top of each other\" scene. Also compition of ken takekura\nEpisode 12: IT ENDS LIKE THAT!? I NEED MORE!!!",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "11/9/2024",
+					"Date Ended": "12/19/2024",
+					"Is Book": false
+				}
+			}
+		},
+		"Ranma 1/2 Remake^97": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "12/12",
+			"Rating": "9.5/10",
+			"Notes": "Episode 8: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nEpisode 10: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nEpisode 11: ??????????\nEpisode 12: Bye bye Shampoo",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "11/9/2024",
+			"Date Ended": "12/23/2024",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Blue Box^98": {
+			"Status": "ongoing",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "14/25",
+			"Rating": "9/10",
+			"Notes": "Wait, Chinatsu likes Taiki? (ep 12)",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "11/9/2024",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Shikimori's Not Just a Cutie^99": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "12/12",
+			"Rating": "10/10",
+			"Notes": "I NEEEEEEED MOOOOOOOOOOOOORRRRREEEEEEE",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "11/30/2024",
+			"Date Ended": "12/1/2024",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Pseudo Harem^100": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "9/10",
+			"Notes": "Really good show, would highly recommend.",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "12/1/2024",
+			"Date Ended": "12/2/2024",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Tamako Market^101": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "18/18",
+			"Rating": "8/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "12/4/2024",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Tamako Market S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "12/12",
+					"Rating": "8/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "12/4/2024",
+					"Date Ended": "12/10/2024",
+					"Is Book": false
+				},
+				"Tamako Market Specials^1": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "6/6",
+					"Rating": "7/10",
+					"Notes": "Very short but cute",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Tomako Market: Love Story^2": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "84/84",
+					"Rating": "9.5/10",
+					"Notes": "SOOO GOOOOOOOD BUT WHY!?????\nI NEEEEEEEEED MOOOOOREEE!!!!!!!\nANIMATION WAS TOP TIER!\nEVERYTHING WAS AMAZING I NEED MORE THAN A CONFESSION!!!!!!!!!!! PLEAAAAAAAAASE!!!!!!!!!!!!!!",
+					"Movie": 84,
+					"Rewatches": 0,
+					"Date Started": "12/10/2024",
+					"Date Ended": "12/10/2024",
+					"Is Book": false
+				}
+			}
+		},
+		"The 100 girlfriends that really really really really love you^102": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8.5/10",
+			"Notes": "How much rizz and aura does this guy have? \nAlso this is hilarious\nEpisode 6: Pool fan service\nRewatch episode 8 at some point. (ssshhhhh)\nEpisode 10: WITH HER MOM?!?!?!?!?!?!?!",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "12/7/2024",
+			"Date Ended": "12/7/2024",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Goodnight World^103": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": true,
+			"Segment": "12/12",
+			"Rating": "9.5/10",
+			"Notes": "Episode 6: RIP PICO!!!!!!!!!!!! May she rest in AI piece... RIP Ichi once he finds out.\nSUCH A GOOD ANIME. I would Highly recommend to others.",
+			"Movie": 0,
+			"Rewatches": 1,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"The Weakest Tamer Began a Journey to Pick Up Trash^104": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "12/12",
+			"Rating": "8/10",
+			"Notes": "First half was mid but then it got good. Honestly, not bad of a show. Would like a second season.",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "12/29/24",
+			"Date Ended": "12/30/24",
+			"Is Book": false,
+			"Children": {
+
+			}
+		},
+		"Sound! Euphonium^105": {
+			"Status": "complete",
+			"Icon": "",
+			"Favorite": false,
+			"Segment": "14/14",
+			"Rating": "0/10",
+			"Notes": "",
+			"Movie": 0,
+			"Rewatches": 0,
+			"Date Started": "",
+			"Date Ended": "",
+			"Is Book": false,
+			"Children": {
+				"Sound! Euphonium S1^0": {
+					"Status": "complete",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "14/14",
+					"Rating": "9/10",
+					"Notes": "Ep 8: Damn, Shuuichi really just rejected Hazuki like that? Rip. They would've made a great couple. I wonder how the dynamic is going to be. Also, let's go Kumiko and Reina are now friends! This anime is so good\n\nEp 9: I'm so very confused. What's happening romantically between Shuuichi and Kumiko? I'm rooting for them now. Also, I wonder how Hazuki truly feels. About the band, rip Hazuki and Natsuki, they didn't make it.\n\nEp 11: Honestly, I know it's probably yuribait, but Kumiko and Reina as a couple could be interesting. Also let's go Reina for getting the solo!\n\nEp 13: LETS GOOOOOOOOO!!!! THEY GOT GOLD!!!!!!!!!!!!!\n\nEp 14 (Extra): Hazuki Katou's perspective on the days leading up to and the day of compitition. She still has feelings for Shuuichi and she might be starting to grow on him. I don't know who to root for anymore. Kumiko or Hazuki? It's impossible.",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "1/11/2025",
+					"Date Ended": "1/12/2025",
+					"Is Book": false
+				},
+				"Sound! Euphonium S1 Specials^1": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sound! Euphonium S2^2": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sound! Euphonium S2 Specials^3": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Liz and Aoi^4": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sound! Euphonium: Our Promise: A Brand New Day^5": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sound! Euphonium: Ensemble Contest Arc^6": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				},
+				"Sound! Euphonium S3^7": {
+					"Status": "",
+					"Icon": "",
+					"Favorite": false,
+					"Segment": "0/0",
+					"Rating": "0/10",
+					"Notes": "",
+					"Movie": 0,
+					"Rewatches": 0,
+					"Date Started": "",
+					"Date Ended": "",
+					"Is Book": false
+				}
+			}
+		}
+	}
+}

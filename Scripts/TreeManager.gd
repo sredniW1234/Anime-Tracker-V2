@@ -2,9 +2,21 @@ extends Tree
 
 var root: TreeItem = null
 var root_item: GeneralItem = null
+var collapsed: bool = false
+
+@onready var timer: Timer = $"../../../../../../Timer"
+@onready var tab_container: TabContainer = $"../../.."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#list[root_item] = {}
+	create_tree()
+	Manager.connect("load_tree", load_tree)
+	Manager.connect("new_tree", new_tree)
+	Manager.connect("status_filter", filter_status)
+
+func create_tree():
+	clear()
 	# Set tree properties
 	columns = 3
 	column_titles_visible = true
@@ -18,12 +30,16 @@ func _ready() -> void:
 	set_column_expand_ratio(1, 4)
 	set_column_expand_ratio(2, 0)
 	hide_root = true
+	collapsed = false
 	
+	Manager.list = {}
+	Manager.ordered_list_keys = []
+	Manager.currently_selected = null
+	Manager.save_location = ""
+	tab_container.current_tab = 0
 	root = create_item()
 	root_item = GeneralItem.new()
 	root_item.create(root, Manager.list_name)
-	#list[root_item] = {}
-
 
 # Create and add the item to the list
 func add_item(parent: GeneralItem, item_name: String):
@@ -47,6 +63,8 @@ func add_item(parent: GeneralItem, item_name: String):
 	
 	item.update_data()
 	parent.update_data()
+	scroll_to_item(item.tree_item)
+	return item
 
 
 func _on_add_pressed() -> void:
@@ -71,5 +89,71 @@ func _on_nothing_selected() -> void:
 	Manager.currently_selected = null
 
 
+# Update all auto update items
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	for parent: GeneralItem in Manager.ordered_list_keys:
+		if parent.auto_track and parent.date_modified:
+			parent.time_update()
+		for child: GeneralItem in Manager.list[parent]:
+			if child.auto_track and child.date_modified:
+				child.time_update()
+	timer.start(1)
+
+
+func load_item(item_data: Dictionary, parent = null):
+	if parent == null:
+		parent = root_item
+	if item_data.get("type") == "season":
+		Manager.add_type = 0
+	elif item_data.get("type") == "movie":
+		Manager.add_type = 1
+	elif item_data.get("type") == "book":
+		Manager.add_type = 2
+	var item = add_item(parent, item_data["item_name"])
+	for key in item_data.keys():
+		if key in item and key != "children":
+			item.set(key, item_data[key])
+	item.update_data()
+	return item
+
+
+func load_tree(savefile: Dictionary):
+	Manager.list_name = savefile["list_name"]
+	create_tree()
+	for i in savefile["tree"].keys():
+		var parent_data = savefile["tree"][i]
+		var parent_item = load_item(parent_data)
+		if "children" in parent_data:
+			for child in parent_data["children"]:
+				var child_data = parent_data["children"][child]
+				load_item(child_data, parent_item)
+
+
+func new_tree(sure: bool):
+	if sure:
+		create_tree()
+	
+
+func filter_status(filters: Array[String]):
+	for item in Manager.ordered_list_keys:
+		if (item.status in filters) or ("all" in filters) or (filters == []):
+			item.tree_item.visible = true
+		else:
+			item.tree_item.visible = false
+		
+
+
+func _on_toggle_collapse_pressed() -> void:
+	collapsed = not collapsed
+	for item in Manager.ordered_list_keys:
+		item.tree_item.set_collapsed_recursive(collapsed)
+
+
+func _on_tab_container_tab_changed(tab: int) -> void:
+	Manager.current_tab = tab
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Deselect"):
+		deselect_all()
+		Manager.currently_selected = null

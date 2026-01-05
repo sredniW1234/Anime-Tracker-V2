@@ -4,6 +4,9 @@ extends Button
 @export var pre_text: String = "Date"
 var date: Date
 
+signal date_selected(date, unix)
+
+
 func _ready() -> void:
 	connect("pressed", display_date_selector)
 	date_selector.connect("date_selected", show_date_selected)
@@ -17,6 +20,7 @@ func show_date_selected(date_obj: Date):
 	var date_text = str(date_obj.month()) + "/" + str(date_obj.day()) + "/" + str(date_obj.year())
 	date = date_obj
 	text = pre_text + date_text
+	date_selected.emit(text, get_date_unix())
 
 
 # Gets Unix time from current date

@@ -1,20 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://bphho5obqg0qf"]
+[gd_scene load_steps=16 format=3 uid="uid://xwn7d20vcjgp"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
+[ext_resource type="Script" path="res://Scripts/file_menu_button.gd" id="1_x4and"]
 [ext_resource type="Script" path="res://Scripts/ItemTypeOption.gd" id="2_0srl7"]
 [ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
+[ext_resource type="Script" path="res://Scripts/filter_status.gd" id="2_a7t5u"]
 [ext_resource type="Texture2D" uid="uid://ban3wrrrbvouj" path="res://Assets/icons/series.svg" id="3_p4swl"]
 [ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/item_inspect_view.tscn" id="3_p4wpx"]
+[ext_resource type="Texture2D" uid="uid://3i3re0jn23fs" path="res://Assets/icons/toggle collapse.svg" id="3_srfoy"]
 [ext_resource type="Texture2D" uid="uid://csbqc8m2n7huu" path="res://Assets/icons/movie.svg" id="3_yjbxd"]
 [ext_resource type="Texture2D" uid="uid://ce37y3t0psfho" path="res://Assets/icons/book.svg" id="5_wicgw"]
 [ext_resource type="PackedScene" uid="uid://bv08fgsg2pnt5" path="res://Scenes/list_stats_view.tscn" id="8_0oxg4"]
 [ext_resource type="PackedScene" uid="uid://d17y3ge8ar1r3" path="res://Scenes/context_menu.tscn" id="9_uxrnn"]
+[ext_resource type="Script" path="res://Scripts/new_list_confirm.gd" id="12_dc1qg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
 
 [node name="Anime List" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,16 +44,16 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_jkd2l")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Version: 0.1 PRE-ALPHA"
+text = "Version: 2.2a ALPHA"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -86,13 +98,34 @@ popup/item_2/text = "Save As"
 popup/item_2/id = 2
 popup/item_3/text = "Load"
 popup/item_3/id = 3
+script = ExtResource("1_x4and")
+
+[node name="save" type="FileDialog" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton"]
+access = 2
+filters = PackedStringArray("*.at2")
+use_native_dialog = true
+
+[node name="load" type="FileDialog" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton"]
+auto_translate_mode = 1
+title = "Open a File"
+size = Vector2i(207, 175)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.at2")
+use_native_dialog = true
 
 [node name="AZSortCheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
+tooltip_text = "Sort Alphebetically.
+Disabled Until I can figure out how the hell to program this without messing up everything."
+disabled = true
 text = "Sort A-Z"
 
 [node name="SortRatingOptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
+tooltip_text = "IDK how to sort yet. :("
+disabled = true
 selected = 0
 item_count = 3
 popup/item_0/text = "Sort Rating: None"
@@ -103,10 +136,11 @@ popup/item_2/id = 2
 
 [node name="FilterStatusMenuButton" type="MenuButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
+tooltip_text = "Filters by the Status of the item."
 text = "Filter by Status"
 flat = false
 item_count = 7
-popup/item_0/text = "Complete"
+popup/item_0/text = "Completed"
 popup/item_0/checkable = 1
 popup/item_1/text = "Watching"
 popup/item_1/checkable = 1
@@ -123,14 +157,25 @@ popup/item_4/id = 4
 popup/item_5/text = "Planned"
 popup/item_5/checkable = 1
 popup/item_5/id = 5
+popup/item_5/disabled = true
 popup/item_6/text = "All"
 popup/item_6/checkable = 1
 popup/item_6/id = 6
+script = ExtResource("2_a7t5u")
 
 [node name="FilterGenreMenuButton" type="MenuButton" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
+tooltip_text = "Filter by specific genres.
+Disabled until I figure out how to display this."
+disabled = true
 text = "Filter by Genre"
 flat = false
+
+[node name="ToggleCollapse" type="Button" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 23
+text = "Collapse"
+icon = ExtResource("3_srfoy")
 
 [node name="Tree" type="Tree" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer"]
 layout_mode = 2
@@ -165,9 +210,10 @@ popup/item_0/icon = ExtResource("3_p4swl")
 popup/item_1/text = "Movie Item"
 popup/item_1/icon = ExtResource("3_yjbxd")
 popup/item_1/id = 1
-popup/item_2/text = "Book Item"
+popup/item_2/text = "Book Item (WIP)"
 popup/item_2/icon = ExtResource("5_wicgw")
 popup/item_2/id = 2
+popup/item_2/disabled = true
 script = ExtResource("2_0srl7")
 
 [node name="AddButton" type="Button" parent="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer"]
@@ -201,8 +247,75 @@ texture = ExtResource("2_03v5c")
 [node name="ContextMenu" parent="PanelContainer" instance=ExtResource("9_uxrnn")]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="New List Confirm" type="CenterContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+script = ExtResource("12_dc1qg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/New List Confirm"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/New List Confirm/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Are You Sure?
+Any unsaved changes will be lost."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="FlowContainer" parent="Panel2/New List Confirm/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+alignment = 1
+
+[node name="No" type="Button" parent="Panel2/New List Confirm/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "No"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2/New List Confirm/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NewListName" type="LineEdit" parent="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+placeholder_text = "Put List Name here"
+alignment = 1
+max_length = 30
+expand_to_text_length = true
+
+[node name="Yes" type="Button" parent="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Yes"
+
+[connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_tab_container_tab_changed"]
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/List Stats/list_stats_view" method="_on_tab_container_tab_changed"]
+[connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/save" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/load" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_load_file_selected"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/ToggleCollapse" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_toggle_collapse_pressed"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_selected"]
 [connection signal="nothing_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_nothing_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer/AddButton" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_add_pressed"]
+[connection signal="timeout" from="Timer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_timer_timeout"]
+[connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/No" to="Panel2/New List Confirm" method="_on_no_pressed"]
+[connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/Yes" to="Panel2/New List Confirm" method="_on_yes_pressed"]

@@ -12,5 +12,8 @@ func _on_new_list_pressed() -> void:
 
 
 func _on_create_pressed() -> void:
-	Manager.list_name = new_list_name.text
+	if new_list_name.text:
+		Manager.list_name = new_list_name.text
+	else:
+		Manager.list_name = "New List"
 	get_tree().change_scene_to_file("res://Scenes/anime_list.tscn")
