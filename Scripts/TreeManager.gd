@@ -2,6 +2,7 @@ extends Tree
 
 var root: TreeItem = null
 var root_item: GeneralItem = null
+<<<<<<< HEAD
 var collapsed: bool = false
 
 @onready var timer: Timer = $"../../../../../../Timer"
@@ -17,6 +18,14 @@ func _ready() -> void:
 
 func create_tree():
 	clear()
+=======
+@onready var timer: Timer = $Timer
+@onready var file_menu_button: MenuButton = $"../MenuBar/MarginContainer/HBoxContainer/FileMenuButton"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	timer.connect("timeout", update_items)
+>>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	# Set tree properties
 	columns = 3
 	column_titles_visible = true
@@ -40,6 +49,12 @@ func create_tree():
 	root = create_item()
 	root_item = GeneralItem.new()
 	root_item.create(root, Manager.list_name)
+<<<<<<< HEAD
+=======
+	file_menu_button.get_popup().connect("id_pressed", menu_button_selected)
+	#list[root_item] = {}
+
+>>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 
 # Create and add the item to the list
 func add_item(parent: GeneralItem, item_name: String):
@@ -61,9 +76,14 @@ func add_item(parent: GeneralItem, item_name: String):
 		if "children" in parent:
 			parent.children.append(item)
 	
+<<<<<<< HEAD
 	item.update_data()
 	parent.update_data()
 	scroll_to_item(item.tree_item)
+=======
+	item.update()
+	parent.update()
+>>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	return item
 
 
@@ -89,6 +109,7 @@ func _on_nothing_selected() -> void:
 	Manager.currently_selected = null
 
 
+<<<<<<< HEAD
 # Update all auto update items
 func _on_timer_timeout() -> void:
 	for parent: GeneralItem in Manager.ordered_list_keys:
@@ -157,3 +178,56 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Deselect"):
 		deselect_all()
 		Manager.currently_selected = null
+=======
+func update_items():
+	for parent in Manager.ordered_list_keys:
+		parent.update()
+		for child in Manager.list[parent]:
+			child.update()
+	timer.start(1)
+
+func load_item(item_properties: Dictionary):
+	var item: GeneralItem = add_item(root_item, item_properties["Name"])
+	# Set all common properties
+	item.status = item_properties["Status"]
+	item.icon = item_properties["Icon"]
+	item.is_favorite = item_properties["Favorite"]
+	item.rating = item_properties["Rating"]
+	item.notes = item_properties["Notes"]
+	item.date_started = item_properties["Date Started"]
+	item.date_modified = item_properties["Date Modified"]
+	item.auto_track = item_properties["Auto Track"]
+	item.genres.append_array(item_properties["Genres"])
+	# Season specific
+	if item_properties.get("Type") == "Season":
+		item.episodes = item_properties["Episodes"]
+		item.episodes_rewatched = item_properties["Rewatches"]
+		item.date_ended = item_properties["Date Ended"]
+		if item.status == "ongoing":
+			item.date_release_started = item_properties["Date Release Started"]
+			item.release_schedule = item_properties["Release_Schedule"]
+			item.max_episodes = item_properties["Max_Episodes"]
+	elif item_properties.get("Type") == "Movie":
+		item.length = item_properties["Movie"]
+		item.rewatches = item_properties["Rewatches"]
+	elif item_properties.get("Type") == "Book":
+		pass
+	return item
+
+func load_tree(save_dict: Dictionary):
+	for i in save_dict.keys():
+		var parent_item_properties: Dictionary = save_dict[i]
+		var parent_item = load_item(parent_item_properties)
+		
+
+
+func menu_button_selected(id):
+	var selected_text = file_menu_button.get_popup().get_item_text(id)
+	if selected_text == "Save":
+		Manager.save_list("C:\\Users\\winde\\Desktop\\save_data.alt")
+	if selected_text == "Load":
+		var file = FileAccess.open("C:\\Users\\winde\\Desktop\\save_data.alt", FileAccess.READ)
+		var content = file.get_as_text()
+		var data = JSON.parse_string(content)
+		load_tree(data)
+>>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f

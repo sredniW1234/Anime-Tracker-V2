@@ -140,12 +140,15 @@ func delete():
 			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
 		queue_free()
 
-
 # needed
 func update_data():
 	pass
 
+<<<<<<< HEAD
 
 # Update item based on time
 func time_update():
+=======
+func update():
+>>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	pass
