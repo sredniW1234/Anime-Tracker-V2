@@ -1,6 +1,6 @@
-extends CenterContainer
+extends Panel
 
-@onready var new_list_name: LineEdit = $VBoxContainer/HBoxContainer/HBoxContainer/NewListName
+@onready var new_list_name: LineEdit = $"New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/NewListName"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

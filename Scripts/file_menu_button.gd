@@ -12,7 +12,7 @@ func _ready() -> void:
 func file_menu_pressed(id: int) -> void:
 	match id:
 		0:
-			Manager.emit_signal("new_tree", false)
+			Manager.new_tree.emit(false)
 		1:
 			if Manager.save_location:
 				SaveManager.save(Manager.save_location)

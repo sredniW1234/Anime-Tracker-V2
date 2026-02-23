@@ -268,6 +268,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("12_dc1qg")
 
 [node name="New List Confirm" type="CenterContainer" parent="Panel2"]
 layout_mode = 1
@@ -277,7 +278,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-script = ExtResource("12_dc1qg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel2/New List Confirm"]
 layout_mode = 2
@@ -325,5 +325,5 @@ text = "Yes"
 [connection signal="nothing_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_nothing_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/MarginContainer/HBoxContainer/AddButton" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_add_pressed"]
 [connection signal="timeout" from="Timer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_timer_timeout"]
-[connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/No" to="Panel2/New List Confirm" method="_on_no_pressed"]
-[connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/Yes" to="Panel2/New List Confirm" method="_on_yes_pressed"]
+[connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/No" to="Panel2" method="_on_no_pressed"]
+[connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/Yes" to="Panel2" method="_on_yes_pressed"]
