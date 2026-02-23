@@ -10,10 +10,19 @@ var collapsed: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#list[root_item] = {}
-	create_tree()
 	Manager.connect("load_tree", load_tree)
 	Manager.connect("new_tree", new_tree)
 	Manager.connect("status_filter", filter_status)
+	if Manager.loading_from_main:
+		var save_location = Manager.save_location
+		var file = FileAccess.open(Manager.save_location, FileAccess.READ)
+		if file:
+			var content = file.get_as_text()
+			var data = JSON.parse_string(content)
+			Manager.load_tree.emit(data)
+		Manager.save_location = save_location
+	else:
+		create_tree()
 
 func create_tree():
 	clear()

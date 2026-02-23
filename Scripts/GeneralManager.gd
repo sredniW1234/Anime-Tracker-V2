@@ -11,6 +11,7 @@ var list = {}  # {Series Name Item: [Seasons], ...}
 var ordered_list_keys = []
 var list_name = ""
 var save_location = ""
+var loading_from_main: bool = false
 
 var current_tab = 0
 
