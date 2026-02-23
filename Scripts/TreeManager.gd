@@ -163,3 +163,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Deselect"):
 		deselect_all()
 		Manager.currently_selected = null
+
+
+func _on_item_activated() -> void:
+	Manager.current_tab = 1
+	tab_container.current_tab = 1
