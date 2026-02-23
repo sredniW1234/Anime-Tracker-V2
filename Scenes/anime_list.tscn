@@ -1,13 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://xwn7d20vcjgp"]
 
-[ext_resource type="Script" uid="uid://bvln14sy6ah1w" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
+[ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://Scripts/file_menu_button.gd" id="1_x4and"]
 [ext_resource type="Script" path="res://Scripts/ItemTypeOption.gd" id="2_0srl7"]
-=======
-[ext_resource type="Script" uid="uid://b1ahtplrfucll" path="res://Scripts/ItemTypeOption.gd" id="2_0srl7"]
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 [ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
 [ext_resource type="Script" path="res://Scripts/filter_status.gd" id="2_a7t5u"]
 [ext_resource type="Texture2D" uid="uid://ban3wrrrbvouj" path="res://Assets/icons/series.svg" id="3_p4swl"]
@@ -96,7 +92,6 @@ text = "File"
 flat = false
 item_count = 4
 popup/item_0/text = "New"
-popup/item_0/id = 0
 popup/item_1/text = "Save"
 popup/item_1/id = 1
 popup/item_2/text = "Save As"
@@ -134,7 +129,6 @@ disabled = true
 selected = 0
 item_count = 3
 popup/item_0/text = "Sort Rating: None"
-popup/item_0/id = 0
 popup/item_1/text = "Sort Rating: High to Low"
 popup/item_1/id = 1
 popup/item_2/text = "Sort Rating: Low to High"
@@ -148,7 +142,6 @@ flat = false
 item_count = 7
 popup/item_0/text = "Completed"
 popup/item_0/checkable = 1
-popup/item_0/id = 0
 popup/item_1/text = "Watching"
 popup/item_1/checkable = 1
 popup/item_1/id = 1
@@ -193,9 +186,6 @@ allow_reselect = true
 select_mode = 1
 script = ExtResource("1_3oy5k")
 
-[node name="Timer" type="Timer" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree"]
-autostart = true
-
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/TabContainer/View List"]
 layout_mode = 1
 anchors_preset = 3
@@ -217,7 +207,6 @@ fit_to_longest_item = false
 item_count = 3
 popup/item_0/text = "Season Item"
 popup/item_0/icon = ExtResource("3_p4swl")
-popup/item_0/id = 0
 popup/item_1/text = "Movie Item"
 popup/item_1/icon = ExtResource("3_yjbxd")
 popup/item_1/id = 1

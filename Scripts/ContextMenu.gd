@@ -34,7 +34,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if Manager.current_tab == 0 and Manager.currently_selected and event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
 		# Handle reparenting
-		if Manager.currently_selected.parent.get_parent() == Manager.currently_selected.tree_item.get_tree().get_root():
+		if Manager.currently_selected.is_level_1():
 			_pm.set_item_disabled(PopupIds.Unparent, true)
 			# Can reparent
 			if "children" in Manager.currently_selected and not len(Manager.currently_selected.children) and Manager.currently_selected.index != len(Manager.ordered_list_keys)-1:

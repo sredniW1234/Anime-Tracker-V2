@@ -32,21 +32,12 @@ var genre_option = preload("res://Scenes/genre_button.tscn")
 
 #region Row 4
 @onready var auto_track_toggle: CheckBox = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/AutoTrackToggle
-<<<<<<< HEAD
 @onready var date_started: Button = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/DateStarted
 @onready var date_ended: Button = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/DateEnded
 @onready var spacer_3: MarginContainer = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Spacer3
 @onready var release_schedule_option: OptionButton = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/ReleaseScheduleOption
 @onready var release_started: Button = $"MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Release Started"
 @onready var release_count: SpinBox = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/ReleaseCount
-=======
-@onready var date_started: Button = $"MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Date Started"
-@onready var date_ended: Button = $"MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Date Ended"
-@onready var spacer_3: MarginContainer = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Spacer3
-@onready var release_schedule_option: OptionButton = $MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/ReleaseScheduleOption
-@onready var release_started: Button = $"MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Release Started"
-@onready var episode_count: SpinBox = $"MarginContainer/VBoxContainer/PanelContainer4/MarginContainer/Dates/Episode Count"
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 #endregion
 
 
@@ -123,14 +114,7 @@ func load_view(current_item: GeneralItem):
 	release_count.hide()
 	spacer_3.hide()
 	genres_panel.hide()
-<<<<<<< HEAD
 	status_dropdown.clear()
-=======
-	release_started.hide()
-	episode_count.hide()
-	date_started.select_date(item.date_started)
-	date_ended.select_date(item.date_ended)
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	
 	auto_track_toggle.button_pressed = item.auto_track
 	date_started.text = item.date_started
@@ -161,8 +145,6 @@ func load_view(current_item: GeneralItem):
 		progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 		progress_bar.value *= 100  # Convert decimal to percentage
 		rewatch_spinbox.value = item.episodes_rewatched
-		release_started.select_date(item.date_release_started)
-		release_schedule_option.select(Manager.SCHEDULE_TO_UNIX.values().find(item.release_schedule))  # Get the index of release schedule index and select that option
 		
 		for status in Manager.POSSIBLE_SEASON_STATUS:
 			status_dropdown.add_item("Status: " + status.capitalize())
@@ -172,14 +154,8 @@ func load_view(current_item: GeneralItem):
 			release_schedule_option.show()
 			spacer_3.show()
 			release_started.show()
-<<<<<<< HEAD
 			release_count.show()
 			print("here")
-=======
-			episode_count.show()
-		elif episodes >= total_episodes:
-			status_dropdown.select(0)
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	elif is_instance_of(item, BookItem):
 		media_length.text = "Pages: "
 		var pages = int(item.pages.split("/")[0])  # Get the current episode count
@@ -212,14 +188,8 @@ func _on_current_watch_value_changed(value: float) -> void:
 	# Set the value depending on item type
 	if is_instance_of(item, SeasonItem):
 		episodes = value
-<<<<<<< HEAD
 		#item.episodes = str(episodes) + "/" + str(total_episodes)
 		item.current_episode = episodes
-=======
-		item.episodes = str(episodes) + "/" + str(total_episodes)
-		if episodes >= total_episodes:
-			status_dropdown.select(0)
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 		item.update_data()
 	elif is_instance_of(item, MovieItem):
 		item.length = value
@@ -232,14 +202,8 @@ func _on_current_watch_value_changed(value: float) -> void:
 func _on_total_watch_value_changed(value: float) -> void:
 	if is_instance_of(item, SeasonItem):
 		total_episodes = value
-<<<<<<< HEAD
 		#item.episodes = str(episodes) + "/" + str(total_episodes)
 		item.total_episodes = total_episodes
-=======
-		item.episodes = str(episodes) + "/" + str(total_episodes)
-		if episodes >= total_episodes:
-			status_dropdown.select(0)
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 		item.update_data()
 		
 	progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
@@ -270,20 +234,12 @@ func _on_status_dropdown_item_selected(index: int) -> void:
 		release_schedule_option.show()
 		spacer_3.show()
 		release_started.show()
-<<<<<<< HEAD
 		release_count.show()
-=======
-		episode_count.show()
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	else:
 		release_schedule_option.hide()
 		spacer_3.hide()
 		release_started.hide()
-<<<<<<< HEAD
 		release_count.hide()
-=======
-		episode_count.hide()
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	if item:
 		item.date_modified = Time.get_unix_time_from_system()
 
@@ -294,16 +250,15 @@ func _on_release_schedule_option_item_selected(index: int) -> void:
 		var schedule = release_schedule_option.get_item_text(index).split(": ")[1]
 		item.release_schedule = Manager.SCHEDULE_TO_UNIX[schedule.to_lower()]
 
-# Add genres
+
 func _on_add_genres_pressed() -> void:
 	set_genres()
 	genres_panel.hide()
 
-# Show Genre Panel
+
 func _on_show_genres_pressed() -> void:
 	genres_panel.show()
 
-<<<<<<< HEAD
 
 func start_date_selected(date, _unix):
 	if item:
@@ -338,24 +293,3 @@ func _on_release_started_date_selected(date: Variant, unix: Variant) -> void:
 func _on_favorite_toggle_toggled(toggled_on: bool) -> void:
 	if item:
 		item.is_favorite = toggled_on
-=======
-# Change the Item start date
-func _on_date_started_date_selected(date: String) -> void:
-	if item:
-		item.date_started = date
-
-# Change the Item end date
-func _on_date_ended_date_selected(date: String) -> void:
-	if item:
-		item.date_started = date
-
-# Change the Item rellease started date
-func _on_release_started_date_selected(date: String) -> void:
-	if is_instance_of(item, SeasonItem):
-		item.date_release_started = date
-
-# If ongoing, change the maximum episode/chapter count
-func _on_episode_count_value_changed(value: float) -> void:
-	if is_instance_of(item, SeasonItem):
-		item.max_episodes = value
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f

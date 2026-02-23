@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv08fgsg2pnt5"]
+[gd_scene load_steps=2 format=3 uid="uid://bv08fgsg2pnt5"]
 
 [ext_resource type="Script" path="res://Scripts/list_stats_view.gd" id="1_i8oye"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_773x2"]
-bg_color = Color(0.147672, 0.147672, 0.147672, 1)
 
 [node name="list_stats_view" type="Control"]
 layout_mode = 3
@@ -28,7 +25,6 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_773x2")
 text = "STATS:"
 horizontal_alignment = 1
 

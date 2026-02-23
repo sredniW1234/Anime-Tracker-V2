@@ -27,7 +27,6 @@ var date_modified: int  # Date status was modified in unix
 var status: String:
 	set(new_status):
 		status = new_status
-		update_data()  # Default to completed
 var index: int  # Index in tree relative to parent
 var rating: float = 0 # Rating out of 10
 var is_favorite: bool = false: # Is this item favorited
@@ -57,7 +56,7 @@ func move_before():
 		index = tree_item.get_index()
 		
 		var list: Array
-		if parent.get_parent() == tree_item.get_tree().get_root():
+		if is_level_1():
 			list = Manager.ordered_list_keys
 		else:
 			list = Manager.list[Manager.ordered_list_keys[parent.get_index()]]
@@ -73,7 +72,7 @@ func move_after():
 	var list: Array
 	
 	if is_instance_valid(tree_item):
-		if parent.get_parent() == tree_item.get_tree().get_root():  # 1st level, (Season Name)
+		if is_level_1():  # 1st level, (Season Name)
 			if index < len(Manager.ordered_list_keys):
 				tree_item.move_after(tree_item.get_next())
 				index = tree_item.get_index()
@@ -94,7 +93,7 @@ func move_after():
 # Unparents the item to the root
 func unparent():
 	if tree_item:
-		if parent.get_parent() != tree_item.get_tree().get_root():
+		if not is_level_1():
 			# Remove old tree item
 			tree_item.free()
 			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
@@ -111,7 +110,7 @@ func unparent():
 
 func re_parent():  # reparent already exists but we want new functionality. I think.
 	if tree_item:
-		if parent.get_parent() == tree_item.get_tree().get_root():  # We are level 1
+		if is_level_1():  # We are level 1
 			if index != len(Manager.ordered_list_keys) - 1:
 				# Remove old tree item
 				tree_item.free()
@@ -129,6 +128,10 @@ func re_parent():  # reparent already exists but we want new functionality. I th
 				update_data()
 
 
+func is_level_1() -> bool:
+	return parent.get_parent() == tree_item.get_tree().get_root()
+
+
 func delete():
 	if tree_item:
 		Manager.currently_selected = null
@@ -140,15 +143,12 @@ func delete():
 			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
 		queue_free()
 
+
 # needed
 func update_data():
 	pass
 
-<<<<<<< HEAD
 
 # Update item based on time
 func time_update():
-=======
-func update():
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	pass

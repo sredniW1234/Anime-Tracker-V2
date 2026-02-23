@@ -27,7 +27,6 @@ const POSSIBLE_MOVIE_GENRES = ["Shonen", "Shojo", "Seinen", "Josei", "Action", "
 const SCHEDULE_TO_UNIX = {"weekly": 604800, "bi-weekly": 1209600, "monthly": 2629743}
 
 signal selected_changed(currently_selected: GeneralItem)
-<<<<<<< HEAD
 signal load_tree(tree_data: Dictionary)
 signal new_tree(ensured: bool)  # Ensured -> Whether the user has confirmed to create a new tree.
 signal status_filter(filters: Array[String])
@@ -35,14 +34,6 @@ signal status_filter(filters: Array[String])
 # Gets Unix time from current date
 func get_date_unix(date) -> int:
 	date = date.split(": ")[-1].split("/")
-=======
-
-
-# Gets Unix time from current date
-func get_date_unix(date_string: String) -> int:
-	var date = date_string.split(": ")[-1].split("/")
-	print(date)
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f
 	var month = ("0" if int(date[0]) < 10 else "") + date[0]
 	var day = ("0" if int(date[1]) < 10 else "") + date[1]
 	var year = date[2]
@@ -51,23 +42,9 @@ func get_date_unix(date_string: String) -> int:
 	var formatted_date = year + "-" + month + "-" + day
 	var unix = Time.get_unix_time_from_datetime_string(formatted_date)
 	return unix
-<<<<<<< HEAD
-	
 
 func export():
 	var data = {}
 	for item in ordered_list_keys:
 		if is_instance_valid(item):
 			data.merge(item.export())
-=======
-
-
-func save_list(desitination:String):
-	var savefile = FileAccess.open(desitination, FileAccess.WRITE)
-	var data = {}
-	for parent in ordered_list_keys:
-		data[str(parent.index)] = parent.get_data()
-	var data_as_json = JSON.stringify(data, "\t", false)
-	savefile.store_string(data_as_json)
-	savefile.close()
->>>>>>> be1238647f7a9f3c14b10e0829de9669d302b45f

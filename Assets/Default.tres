@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=25 format=3 uid="uid://baegv1388b7q"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://baegv1388b7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnxvk"]
 content_margin_left = 4.0
@@ -91,6 +91,9 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woocw"]
+bg_color = Color(0.117647, 0.129412, 0.156863, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqmkt"]
 content_margin_left = 4.0
@@ -241,6 +244,8 @@ Button/styles/pressed = SubResource("StyleBoxFlat_2n661")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_l1oxv")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_eqk2i")
 HSlider/styles/slider = SubResource("StyleBoxFlat_1iini")
+ItemList/colors/font_color = Color(0.901961, 0.917647, 0.941176, 1)
+ItemList/styles/panel = SubResource("StyleBoxFlat_woocw")
 Label/colors/font_color = Color(0.901961, 0.917647, 0.941176, 1)
 LineEdit/colors/font_color = Color(0.901961, 0.917647, 0.941176, 1)
 LineEdit/colors/font_uneditable_color = Color(0.368627, 0.4, 0.458824, 1)
