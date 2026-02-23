@@ -177,6 +177,12 @@ theme_override_constants/icon_max_width = 23
 text = "Collapse"
 icon = ExtResource("3_srfoy")
 
+[node name="Search" type="LineEdit" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search Item"
+context_menu_enabled = false
+
 [node name="Tree" type="Tree" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -313,6 +319,7 @@ text = "Yes"
 [connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/save" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_file_dialog_file_selected"]
 [connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/load" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_load_file_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/ToggleCollapse" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_toggle_collapse_pressed"]
+[connection signal="text_changed" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/Search" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_search_text_changed"]
 [connection signal="item_activated" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_activated"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_selected"]
 [connection signal="nothing_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_nothing_selected"]

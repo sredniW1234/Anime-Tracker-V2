@@ -168,3 +168,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_item_activated() -> void:
 	Manager.current_tab = 1
 	tab_container.current_tab = 1
+
+
+func _on_search_text_changed(new_text: String) -> void:
+	if new_text:
+		for item in Manager.ordered_list_keys:
+			item.tree_item.visible = item.item_name.containsn(new_text)
+	else:
+		for item in Manager.ordered_list_keys:
+			item.tree_item.visible = true

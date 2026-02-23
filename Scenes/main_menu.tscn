@@ -59,6 +59,7 @@ placeholder_text = "Put List Name here"
 alignment = 1
 max_length = 30
 expand_to_text_length = true
+context_menu_enabled = false
 
 [node name="Create" type="Button" parent="PanelContainer/CenterContainer/NewListPanel"]
 layout_mode = 2
