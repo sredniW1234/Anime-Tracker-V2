@@ -101,16 +101,14 @@ func _on_nothing_selected() -> void:
 # Update all auto update items
 func _on_timer_timeout() -> void:
 	for parent: GeneralItem in Manager.ordered_list_keys:
-		if is_instance_valid(parent) and parent.auto_track and parent.date_modified:
-			parent.time_update()
-		for child: GeneralItem in Manager.list[parent]:
-			if child.auto_track and child.date_modified:
-				#print(child)
-				#child.time_update()
-				pass
-				# TODO: FIX THIS
-				# ISSUE: Tying to assign invalid previously freed instance.
-	timer.start(1)
+		if is_instance_valid(parent):
+			if parent.auto_track and parent.date_modified:
+				parent.time_update()
+				for child: GeneralItem in Manager.list[parent]:
+					if is_instance_valid(child):
+						if child.auto_track and child.date_modified:
+							child.time_update()
+	timer.start(60)  # Update every 60 seconds
 
 
 func load_item(item_data: Dictionary, parent = null):
