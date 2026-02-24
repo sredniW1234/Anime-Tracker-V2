@@ -135,12 +135,13 @@ func is_level_1() -> bool:
 func delete():
 	if tree_item:
 		Manager.currently_selected = null
-		tree_item.get_tree().deselect_all()
-		tree_item.free()
 		if self in Manager.list.keys():
 			Manager.list.erase(self)
+			Manager.ordered_list_keys.erase(self)
 		else:
 			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
+		tree_item.get_tree().deselect_all()
+		tree_item.free()
 		queue_free()
 
 
