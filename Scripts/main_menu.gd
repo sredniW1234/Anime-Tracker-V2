@@ -22,9 +22,10 @@ func _on_create_pressed() -> void:
 
 func _on_open_list_pressed() -> void:
 	load_diag.popup()
-	Manager.save_location = save_location
-	Manager.loading_from_main = true
-	get_tree().change_scene_to_file("res://Scenes/anime_list.tscn")
+	if save_location:
+		Manager.save_location = save_location
+		Manager.loading_from_main = true
+		get_tree().change_scene_to_file("res://Scenes/anime_list.tscn")
 
 
 func _on_load_file_selected(path: String) -> void:
