@@ -13,6 +13,7 @@ func update_data():
 	if is_instance_valid(tree_item):  # Make sure the tree item exists
 		tree_item.set_custom_color(1, STATUS_COLORS[status])
 		tree_item.set_text(1, "Status: %s | Episodes: %d/%d | Rating: %0.1f/10" % [status, current_episode, total_episodes, rating])
+		set_icon()
 		if is_favorite:
 			tree_item.set_icon(2, ImageTexture.create_from_image(STAR_FILLED))
 		else:
@@ -30,8 +31,8 @@ func update_data():
 				if is_instance_of(child, SeasonItem):
 					episodes += child.current_episode
 					total += child.total_episodes
-				if Manager.POSSIBLE_SEASON_STATUS.find(child.status) >= Manager.POSSIBLE_SEASON_STATUS.find(status):
-					status = child.status
+					if Manager.POSSIBLE_SEASON_STATUS.find(child.status) >= Manager.POSSIBLE_SEASON_STATUS.find(status):
+						status = child.status
 			current_episode = episodes
 			total_episodes = total
 

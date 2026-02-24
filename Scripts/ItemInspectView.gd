@@ -10,6 +10,8 @@ var selected_genres: Array[String] = []
 @onready var rating_slider: HSlider = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/VBoxContainer/RatingSlider
 @onready var rating_label: Label = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/VBoxContainer/RatingLabel
 @onready var rewatch_spinbox: SpinBox = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/VBoxContainer/RewatchSpinbox
+@onready var load_anime_picture: FileDialog = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/AnimePictureButton/LoadAnimePicture
+@onready var anime_picture_button: Button = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/AnimePictureButton
 #endregion
 
 #region Row 2
@@ -106,6 +108,7 @@ func load_view(current_item: GeneralItem):
 	season_name.text = item.item_name
 	rating_slider.value = item.rating
 	rating_slider.emit_signal("value_changed", rating_slider.value)
+	load_icon(item.icon)
 	
 	watch_divider.show()
 	total_watch.show()
@@ -293,3 +296,28 @@ func _on_release_started_date_selected(date: Variant, unix: Variant) -> void:
 func _on_favorite_toggle_toggled(toggled_on: bool) -> void:
 	if item:
 		item.is_favorite = toggled_on
+
+
+func _on_anime_picture_button_pressed() -> void:
+	load_anime_picture.popup()
+
+
+func load_icon(path: String):
+	if item and path:
+		var img = Image.new()
+		var err = img.load(path)
+		if err == OK:
+			item.icon = path
+			#anime_picture.texture = ImageTexture.create_from_image(img)
+			var tex = ImageTexture.create_from_image(img)
+			anime_picture_button.icon = tex
+			#anime_picture.show()
+			return
+	var tex = load("res://Assets/icons/wallpaper.svg")
+	anime_picture_button.icon = tex
+		
+
+
+func _on_load_anime_picture_file_selected(path: String) -> void:
+	load_icon(path)
+		
