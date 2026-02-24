@@ -53,7 +53,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Version: 2.2a ALPHA"
+text = "Version: 2.3a ALPHA"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
