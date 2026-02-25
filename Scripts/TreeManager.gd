@@ -170,6 +170,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Deselect"):
 		deselect_all()
 		Manager.currently_selected = null
+	if event.is_action_pressed("Focus"):
+		if Manager.currently_selected:
+			scroll_to_item(Manager.currently_selected.tree_item)
 
 
 func _on_item_activated() -> void:
