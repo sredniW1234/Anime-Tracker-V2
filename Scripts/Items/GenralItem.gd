@@ -146,17 +146,18 @@ func delete():
 
 
 func set_icon():
-	var img = Image.new()
-	var err = img.load(icon)
-	if err == OK:
-		#anime_picture.texture = ImageTexture.create_from_image(img)
-		var tex = ImageTexture.create_from_image(img)
-		tree_item.set_icon(0, tex)
-		if tex.get_width() >= tex.get_height():
-			tree_item.set_icon_max_width(0, 128)
-		else:
-			#print(tex.get_width(), (128.0/tex.get_height()))
-			tree_item.set_icon_max_width(0, int(tex.get_width() * (128.0/tex.get_height())))
+	if icon:
+		var img = Image.new()
+		var err = img.load(icon)
+		if err == OK:
+			#anime_picture.texture = ImageTexture.create_from_image(img)
+			var tex = ImageTexture.create_from_image(img)
+			tree_item.set_icon(0, tex)
+			if tex.get_width() >= tex.get_height():
+				tree_item.set_icon_max_width(0, 128)
+			else:
+				#print(tex.get_width(), (128.0/tex.get_height()))
+				tree_item.set_icon_max_width(0, int(tex.get_width() * (128.0/tex.get_height())))
 
 # needed
 func update_data():
