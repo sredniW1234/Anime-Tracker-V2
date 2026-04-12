@@ -47,7 +47,7 @@ corner_radius_bottom_left = 10
 [node name="GenreButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yc8ry")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_uyxd0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4ggm1")

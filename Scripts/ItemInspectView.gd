@@ -112,17 +112,14 @@ func load_view(current_item: GeneralItem):
 	
 	watch_divider.show()
 	total_watch.show()
-	release_schedule_option.hide()
-	release_started.hide()
-	release_count.hide()
-	spacer_3.hide()
+	_update_ongoing_visibility()
 	genres_panel.hide()
 	status_dropdown.clear()
 	
 	auto_track_toggle.button_pressed = item.auto_track
 	date_started.text = item.date_started
 	date_ended.text = item.date_ended
-	release_schedule_option.select(-1)
+	release_schedule_option.select(0)
 	notes.text = item.notes
 	load_genres()
 	#set_genres()
@@ -153,12 +150,7 @@ func load_view(current_item: GeneralItem):
 			status_dropdown.add_item("Status: " + status.capitalize())
 		status_dropdown.select(Manager.POSSIBLE_SEASON_STATUS.find(item.status))
 		
-		if item.status == "ongoing":
-			release_schedule_option.show()
-			spacer_3.show()
-			release_started.show()
-			release_count.show()
-			print("here")
+		_update_ongoing_visibility()
 	elif is_instance_of(item, BookItem):
 		media_length.text = "Pages: "
 		var pages = int(item.pages.split("/")[0])  # Get the current episode count
@@ -222,6 +214,12 @@ func _on_auto_track_toggle_toggled(toggled_on: bool) -> void:
 	if item:
 		item.auto_track = toggled_on
 
+func _update_ongoing_visibility() -> void:
+	var is_ongoing = item and item.status == "ongoing"
+	release_schedule_option.visible = is_ongoing
+	spacer_3.visible = is_ongoing
+	release_started.visible = is_ongoing
+	release_count.visible = is_ongoing
 
 func _on_status_dropdown_item_selected(index: int) -> void:
 	if is_instance_of(item, SeasonItem):
@@ -233,16 +231,9 @@ func _on_status_dropdown_item_selected(index: int) -> void:
 	elif is_instance_of(item, BookItem):
 		item.status = Manager.POSSIBLE_BOOK_STATUS[index]
 		item.update_data()
+	_update_ongoing_visibility()
 	if item and item.status == "ongoing":
-		release_schedule_option.show()
-		spacer_3.show()
-		release_started.show()
-		release_count.show()
-	else:
-		release_schedule_option.hide()
-		spacer_3.hide()
-		release_started.hide()
-		release_count.hide()
+		release_schedule_option.select(0)
 	if item:
 		item.date_modified = Time.get_unix_time_from_system()
 
