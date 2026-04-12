@@ -32,7 +32,7 @@ func calculate_stats():
 	for season in all_seasons:
 		total_episode_count += season.total_episodes
 		watched_episode_count += season.current_episode + season.episodes_rewatched
-	left.set_item_text(2, "Total Episodes: " + str(total_episode_count))
+		left.set_item_text(2, "Total Episodes: " + str(total_episode_count))
 	left.set_item_text(3, "Episodes Watched (W/ Rewatched): " + str(watched_episode_count))
 	# Index 4 is empty seperator
 	left.set_item_text(5, "Movies Watched: " + str(len(all_movies)))
@@ -48,25 +48,27 @@ func calculate_stats():
 	"started":0, "dropped":0, "":0}
 	for season in all_seasons:
 		status_stats[season.status] += 1
-	right.set_item_text(0, "Shows:")
-	right.set_item_text(1, "% Completed: " + str(status_stats["completed"] / len(all_seasons)) + "%")
-	right.set_item_text(2, "% Currently Watching: " + str(status_stats["watching"] / len(all_seasons)) + "%")
-	right.set_item_text(3, "% On Hold: " + str(status_stats["on hold"] / len(all_seasons)) + "%")
-	right.set_item_text(4, "% Ongoing: " + str(status_stats["ongoing"] / len(all_seasons)) + "%")
-	right.set_item_text(5, "% Dropped: " + str(status_stats["dropped"] / len(all_seasons)) + "%")
-	right.set_item_text(6, "% Without a Status: " + str(status_stats[""] / len(all_seasons)) + "%")
+	if len(all_seasons) >= 1:
+		right.set_item_text(0, "Shows:")
+		right.set_item_text(1, "Completed: " + str(snappedf(status_stats["completed"] * 100.0 / len(all_seasons), 0.1)) + "%")
+		right.set_item_text(2, "Currently Watching: " + str(snappedf(status_stats["watching"] * 100.0 / len(all_seasons), 0.1)) + "%")
+		right.set_item_text(3, "On Hold: " + str(snappedf(status_stats["on hold"] * 100.0/ len(all_seasons), 0.1)) + "%")
+		right.set_item_text(4, "Ongoing: " + str(snappedf(status_stats["ongoing"] * 100.0/ len(all_seasons), 0.1)) + "%")
+		right.set_item_text(5, "Dropped: " + str(snappedf(status_stats["dropped"] * 100.0/ len(all_seasons), 0.1)) + "%")
+		right.set_item_text(6, "Unset: " + str(snappedf(status_stats[""] * 100.0/ len(all_seasons), 0.1)) + "%")
 	#right.set_item_text(5, "Shows Started: " + str(status_stats["started"] / len(all_seasons)))
 	
 	# movies
 	status_stats = {"completed":0, "watching":0, "on hold":0, "dropped":0, "":0}
 	for movie in all_movies:
 		status_stats[movie.status] += 1
-	right.set_item_text(8, "Movies:")
-	right.set_item_text(9, "% Completed: " + str(status_stats["completed"]))
-	right.set_item_text(10, "% Currently Watching: " + str(status_stats["watching"]))
-	right.set_item_text(11, "% On Hold: " + str(status_stats["on hold"]))
-	right.set_item_text(12, "% Dropped: " + str(status_stats["dropped"]))
-	right.set_item_text(13, "% Without a Status: " + str(status_stats[""]))
+	if len(all_movies) >= 1:
+		right.set_item_text(8, "Movies:")
+		right.set_item_text(9, "Completed: " + str(snappedf(status_stats["completed"] * 100.0 / len(all_movies), 0.1)) + "%")
+		right.set_item_text(10, "Currently Watching: " + str(snappedf(status_stats["watching"] * 100.0 / len(all_movies), 0.1)) + "%")
+		right.set_item_text(11, "On Hold: " + str(snappedf(status_stats["on hold"] * 100.0 / len(all_movies), 0.1)) + "%")
+		right.set_item_text(12, "Dropped: " + str(snappedf(status_stats["dropped"] * 100.0 / len(all_movies), 0.1)) + "%")
+		right.set_item_text(13, "Without a Status: " + str(snappedf(status_stats[""] * 100.0 / len(all_movies), 0.1)) + "%")
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:
