@@ -3,6 +3,8 @@ extends Tree
 var root: TreeItem = null
 var root_item: GeneralItem = null
 var collapsed: bool = false
+var active_status_filters: Array[String] = []
+var active_genre_filters: Array[String] = []
 
 @onready var timer: Timer = $"../../../../../../Timer"
 @onready var tab_container: TabContainer = $"../../.."
@@ -13,6 +15,7 @@ func _ready() -> void:
 	Manager.connect("load_tree", load_tree)
 	Manager.connect("new_tree", new_tree)
 	Manager.connect("status_filter", filter_status)
+	Manager.connect("genre_filter", filter_genre)
 	if Manager.loading_from_main:
 		var save_location = Manager.save_location
 		var file = FileAccess.open(Manager.save_location, FileAccess.READ)
@@ -146,11 +149,29 @@ func new_tree(sure: bool):
 	
 
 func filter_status(filters: Array[String]):
+	active_status_filters = filters
+	apply_filters()
+
+func filter_genre(filters: Array[String]):
+	active_genre_filters = filters
+	apply_filters()
+
+func apply_filters():
 	for item in Manager.ordered_list_keys:
-		if (item.status in filters) or ("all" in filters) or (filters == []):
-			item.tree_item.visible = true
-		else:
-			item.tree_item.visible = false
+		var status_match = active_status_filters == [] or "all" in active_status_filters or item.status in active_status_filters
+		var genre_match = active_genre_filters == [] or item.genres.any(func(g): return g.to_lower() in active_genre_filters)
+		
+		# Check children
+		var any_child_visible = false
+		for child in Manager.list[item]:
+			var child_status_match = active_status_filters == [] or "all" in active_status_filters or child.status in active_status_filters
+			var child_genre_match = active_genre_filters == [] or child.genres.any(func(g): return g.to_lower() in active_genre_filters)
+			var child_visible = child_status_match and child_genre_match
+			child.tree_item.visible = child_visible
+			if child_visible:
+				any_child_visible = true
+				break
+		item.tree_item.visible = (status_match and genre_match) or any_child_visible
 		
 
 

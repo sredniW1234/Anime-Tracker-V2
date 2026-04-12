@@ -31,6 +31,7 @@ signal selected_changed(currently_selected: GeneralItem)
 signal load_tree(tree_data: Dictionary)
 signal new_tree(ensured: bool)  # Ensured -> Whether the user has confirmed to create a new tree.
 signal status_filter(filters: Array[String])
+signal genre_filter(filters: Array[String])
 
 # Gets Unix time from current date
 func get_date_unix(date) -> int:

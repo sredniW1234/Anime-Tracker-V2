@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xwn7d20vcjgp"]
+[gd_scene load_steps=18 format=3 uid="uid://xwn7d20vcjgp"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/ItemTypeOption.gd" id="2_0srl7"]
 [ext_resource type="Texture2D" uid="uid://c1v86e1ekqy15" path="res://Concepts/View List Concept.png" id="2_03v5c"]
 [ext_resource type="Script" path="res://Scripts/filter_status.gd" id="2_a7t5u"]
+[ext_resource type="Script" path="res://Scripts/filter_genre.gd" id="3_5c74r"]
 [ext_resource type="Texture2D" uid="uid://ban3wrrrbvouj" path="res://Assets/icons/series.svg" id="3_p4swl"]
 [ext_resource type="PackedScene" uid="uid://crdf22c6jligh" path="res://Scenes/item_inspect_view.tscn" id="3_p4wpx"]
 [ext_resource type="Texture2D" uid="uid://3i3re0jn23fs" path="res://Assets/icons/toggle collapse.svg" id="3_srfoy"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bv08fgsg2pnt5" path="res://Scenes/list_stats_view.tscn" id="8_0oxg4"]
 [ext_resource type="PackedScene" uid="uid://d17y3ge8ar1r3" path="res://Scenes/context_menu.tscn" id="9_uxrnn"]
 [ext_resource type="Script" path="res://Scripts/new_list_confirm.gd" id="12_dc1qg"]
+[ext_resource type="Script" path="res://Scripts/possible_filter_genres.gd" id="16_xy5jm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
 
@@ -167,9 +169,9 @@ script = ExtResource("2_a7t5u")
 layout_mode = 2
 tooltip_text = "Filter by specific genres.
 Disabled until I figure out how to display this."
-disabled = true
 text = "Filter by Genre"
 flat = false
+script = ExtResource("3_5c74r")
 
 [node name="ToggleCollapse" type="Button" parent="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -315,10 +317,54 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Yes"
 
+[node name="Filter Genres" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"TransparentPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Filter Genres"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Filter Genres/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Filter Genres/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Possible Genres" type="HFlowContainer" parent="Filter Genres/MarginContainer/VBoxContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+script = ExtResource("16_xy5jm")
+
+[node name="SelectGenres" type="Button" parent="Filter Genres/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Filter Selected Genres"
+
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_tab_container_tab_changed"]
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/List Stats/list_stats_view" method="_on_tab_container_tab_changed"]
 [connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/save" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_file_dialog_file_selected"]
 [connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/load" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_load_file_selected"]
+[connection signal="about_to_popup" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FilterGenreMenuButton" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FilterGenreMenuButton" method="_on_about_to_popup"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/ToggleCollapse" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_toggle_collapse_pressed"]
 [connection signal="text_changed" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/Search" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_search_text_changed"]
 [connection signal="item_activated" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_item_activated"]
@@ -328,3 +374,4 @@ text = "Yes"
 [connection signal="timeout" from="Timer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_timer_timeout"]
 [connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/No" to="Panel2" method="_on_no_pressed"]
 [connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/Yes" to="Panel2" method="_on_yes_pressed"]
+[connection signal="pressed" from="Filter Genres/MarginContainer/VBoxContainer/SelectGenres" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FilterGenreMenuButton" method="_on_select_genres_pressed"]
