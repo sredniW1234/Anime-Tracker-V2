@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=27 format=3 uid="uid://baegv1388b7q"]
+[gd_resource type="Theme" load_steps=30 format=3 uid="uid://baegv1388b7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnxvk"]
 content_margin_left = 4.0
@@ -168,6 +168,20 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uau5"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.117647, 0.129412, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp72i"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.117647, 0.129412, 0.156863, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_butd1"]
 bg_color = Color(0.0862745, 0.0941176, 0.113725, 1)
 
@@ -235,6 +249,10 @@ bg_color = Color(0.101961, 0.113725, 0.137255, 1)
 bg_color = Color(0.0836, 0.09108, 0.11, 0.627451)
 corner_radius_bottom_left = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yygw6"]
+bg_color = Color(0.0836, 0.09108, 0.11, 0.627451)
+corner_radius_bottom_left = 6
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wq36g"]
 
 [resource]
@@ -261,6 +279,10 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_lru6b")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_gfby2")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_c03ub")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xhcgo")
+SecondaryPanel/base_type = &"Panel"
+SecondaryPanel/styles/panel = SubResource("StyleBoxFlat_2uau5")
+SecondaryPanelContainer/base_type = &"PanelContainer"
+SecondaryPanelContainer/styles/panel = SubResource("StyleBoxFlat_kp72i")
 TabContainer/colors/font_hovered_color = Color(0.901961, 0.917647, 0.941176, 1)
 TabContainer/colors/font_unselected_color = Color(0.603922, 0.643137, 0.698039, 1)
 TabContainer/styles/panel = SubResource("StyleBoxFlat_butd1")
@@ -272,4 +294,6 @@ TextEdit/styles/normal = SubResource("StyleBoxFlat_onvep")
 TextEdit/styles/read_only = SubResource("StyleBoxFlat_r7ejw")
 TransparentPanel/base_type = &"Panel"
 TransparentPanel/styles/panel = SubResource("StyleBoxFlat_ggbbc")
+TransparentPanelContainer/base_type = &"PanelContainer"
+TransparentPanelContainer/styles/panel = SubResource("StyleBoxFlat_yygw6")
 Tree/styles/panel = SubResource("StyleBoxEmpty_wq36g")

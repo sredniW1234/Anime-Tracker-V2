@@ -1,0 +1,248 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnjxphmutce4"]
+
+[ext_resource type="Script" path="res://Scripts/settings_view.gd" id="1_13nhu"]
+
+[node name="settings_view" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_13nhu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tab" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"SecondaryPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Tab"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Tab/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Defaults" type="Button" parent="HBoxContainer/Tab/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+button_pressed = true
+text = "Defaults"
+
+[node name="Saving" type="Button" parent="HBoxContainer/Tab/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Saving
+"
+
+[node name="Display" type="Button" parent="HBoxContainer/Tab/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Display"
+
+[node name="Setting" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"SecondaryPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Setting"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Defaults" type="VBoxContainer" parent="HBoxContainer/Setting/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Setting/MarginContainer/Defaults"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Default Settings:"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Setting/MarginContainer/Defaults"]
+layout_mode = 2
+
+[node name="DefaultStatus" type="OptionButton" parent="HBoxContainer/Setting/MarginContainer/Defaults"]
+layout_mode = 2
+size_flags_horizontal = 0
+selected = 4
+item_count = 5
+popup/item_0/text = "Default Status: Completed"
+popup/item_1/text = "Default Status: Watching"
+popup/item_1/id = 1
+popup/item_2/text = "Default Status: On Hold"
+popup/item_2/id = 2
+popup/item_3/text = "Default Status: Dropped"
+popup/item_3/id = 4
+popup/item_4/text = "Default Status: None"
+popup/item_4/id = 4
+
+[node name="AutoTrack" type="CheckButton" parent="HBoxContainer/Setting/MarginContainer/Defaults"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_pressed = true
+text = "Default Auto Track"
+
+[node name="DefaultSchedule" type="OptionButton" parent="HBoxContainer/Setting/MarginContainer/Defaults"]
+layout_mode = 2
+size_flags_horizontal = 0
+selected = 0
+item_count = 3
+popup/item_0/text = "Default Release Schedule: Weekly"
+popup/item_1/text = "Default Release Schedule: Bi-Weekly"
+popup/item_1/id = 1
+popup/item_2/text = "Default Release Schedule: Monthly"
+popup/item_2/id = 2
+
+[node name="Saving" type="VBoxContainer" parent="HBoxContainer/Setting/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Saving Settings:"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer"]
+layout_mode = 2
+text = "Set Default Save Location:"
+
+[node name="FileDialog" type="FileDialog" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button"]
+title = "Open a Directory"
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="Default Save File Location" type="LineEdit" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Absolute File Path"
+context_menu_enabled = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3"]
+layout_mode = 2
+text = "Set Default Image Location:"
+
+[node name="FileDialog" type="FileDialog" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button"]
+auto_translate_mode = 1
+title = "Open a Directory"
+size = Vector2i(207, 175)
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="Default Image Location" type="LineEdit" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Absolute File Path"
+context_menu_enabled = false
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="AutoSave" type="CheckButton" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_pressed = true
+text = "AutoSave"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer4"]
+layout_mode = 2
+text = "Autosave Frequency (S): "
+
+[node name="autosave_freq" type="SpinBox" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer4"]
+layout_mode = 2
+tooltip_text = "Autosave Frequency in Seconds. Default 300 (5 minutes)"
+max_value = 999.0
+value = 300.0
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="SOE Prompt" type="CheckButton" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Display Save On Exit Prompt"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Setting/MarginContainer/Saving"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer2"]
+layout_mode = 2
+text = "Unsaved Changes Warning Frequency (S): "
+
+[node name="warn_freq" type="SpinBox" parent="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer2"]
+layout_mode = 2
+tooltip_text = "Unsaved Changes Warning Frequency in Seconds. Default 120 (2 minutes)"
+max_value = 999.0
+value = 120.0
+
+[node name="Display" type="VBoxContainer" parent="HBoxContainer/Setting/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Setting/MarginContainer/Display"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Display Settings:"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Setting/MarginContainer/Display"]
+layout_mode = 2
+
+[node name="Load Tree Collapsed" type="CheckButton" parent="HBoxContainer/Setting/MarginContainer/Display"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Load Tree Collapsed"
+
+[node name="ThemeOptions" type="OptionButton" parent="HBoxContainer/Setting/MarginContainer/Display"]
+layout_mode = 2
+size_flags_horizontal = 0
+selected = 0
+item_count = 1
+popup/item_0/text = "Theme: Default"
+
+[connection signal="pressed" from="HBoxContainer/Tab/MarginContainer/VBoxContainer/Defaults" to="." method="_on_defaults_pressed"]
+[connection signal="pressed" from="HBoxContainer/Tab/MarginContainer/VBoxContainer/Saving" to="." method="_on_saving_pressed"]
+[connection signal="pressed" from="HBoxContainer/Tab/MarginContainer/VBoxContainer/Display" to="." method="_on_display_pressed"]
+[connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button/FileDialog" method="popup"]
+[connection signal="dir_selected" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button/FileDialog" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Default Save File Location" method="set_text"]
+[connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button/FileDialog" method="popup"]
+[connection signal="dir_selected" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button/FileDialog" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Default Image Location" method="set_text"]

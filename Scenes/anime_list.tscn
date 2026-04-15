@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xwn7d20vcjgp"]
+[gd_scene load_steps=19 format=3 uid="uid://xwn7d20vcjgp"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bv08fgsg2pnt5" path="res://Scenes/list_stats_view.tscn" id="8_0oxg4"]
 [ext_resource type="PackedScene" uid="uid://d17y3ge8ar1r3" path="res://Scenes/context_menu.tscn" id="9_uxrnn"]
 [ext_resource type="Script" path="res://Scripts/new_list_confirm.gd" id="12_dc1qg"]
+[ext_resource type="PackedScene" uid="uid://dnjxphmutce4" path="res://Scenes/settings_view.tscn" id="13_wonr1"]
 [ext_resource type="Script" path="res://Scripts/possible_filter_genres.gd" id="16_xy5jm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
@@ -247,6 +248,14 @@ metadata/_tab_index = 2
 [node name="list_stats_view" parent="PanelContainer/MarginContainer/TabContainer/List Stats" instance=ExtResource("8_0oxg4")]
 layout_mode = 1
 
+[node name="Settings" type="TabBar" parent="PanelContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="settings_view" parent="PanelContainer/MarginContainer/TabContainer/Settings" instance=ExtResource("13_wonr1")]
+layout_mode = 1
+
 [node name="ViewListConcept" type="Sprite2D" parent="PanelContainer/MarginContainer/TabContainer"]
 visible = false
 position = Vector2(363, 280)
@@ -318,6 +327,7 @@ theme_override_font_sizes/font_size = 30
 text = "Yes"
 
 [node name="Filter Genres" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
