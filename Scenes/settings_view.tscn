@@ -73,7 +73,6 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="Defaults" type="VBoxContainer" parent="HBoxContainer/Setting/MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -118,6 +117,7 @@ popup/item_2/text = "Default Release Schedule: Monthly"
 popup/item_2/id = 2
 
 [node name="Saving" type="VBoxContainer" parent="HBoxContainer/Setting/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -199,6 +199,7 @@ layout_mode = 2
 [node name="SOE Prompt" type="CheckButton" parent="HBoxContainer/Setting/MarginContainer/Saving"]
 layout_mode = 2
 size_flags_horizontal = 0
+button_pressed = true
 text = "Display Save On Exit Prompt"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Setting/MarginContainer/Saving"]
@@ -239,10 +240,47 @@ selected = 0
 item_count = 1
 popup/item_0/text = "Theme: Default"
 
+[node name="Save" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Button" type="Button" parent="Save"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Save"
+
 [connection signal="pressed" from="HBoxContainer/Tab/MarginContainer/VBoxContainer/Defaults" to="." method="_on_defaults_pressed"]
 [connection signal="pressed" from="HBoxContainer/Tab/MarginContainer/VBoxContainer/Saving" to="." method="_on_saving_pressed"]
 [connection signal="pressed" from="HBoxContainer/Tab/MarginContainer/VBoxContainer/Display" to="." method="_on_display_pressed"]
+[connection signal="item_selected" from="HBoxContainer/Setting/MarginContainer/Defaults/DefaultStatus" to="." method="set_settings"]
+[connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Defaults/AutoTrack" to="." method="set_settings"]
+[connection signal="item_selected" from="HBoxContainer/Setting/MarginContainer/Defaults/DefaultSchedule" to="." method="set_settings"]
 [connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button/FileDialog" method="popup"]
+[connection signal="dir_selected" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button/FileDialog" to="." method="set_settings"]
 [connection signal="dir_selected" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Button/FileDialog" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Default Save File Location" method="set_text"]
+[connection signal="text_changed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Default Save File Location" to="." method="set_settings"]
+[connection signal="text_submitted" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer/Default Save File Location" to="." method="set_settings"]
 [connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button/FileDialog" method="popup"]
+[connection signal="dir_selected" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button/FileDialog" to="." method="set_settings"]
 [connection signal="dir_selected" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Button/FileDialog" to="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Default Image Location" method="set_text"]
+[connection signal="text_changed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Default Image Location" to="." method="set_settings"]
+[connection signal="text_submitted" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer3/Default Image Location" to="." method="set_settings"]
+[connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Saving/AutoSave" to="." method="set_settings"]
+[connection signal="value_changed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer4/autosave_freq" to="." method="set_settings"]
+[connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Saving/SOE Prompt" to="." method="set_settings"]
+[connection signal="value_changed" from="HBoxContainer/Setting/MarginContainer/Saving/HBoxContainer2/warn_freq" to="." method="set_settings"]
+[connection signal="pressed" from="HBoxContainer/Setting/MarginContainer/Display/Load Tree Collapsed" to="." method="set_settings"]
+[connection signal="item_selected" from="HBoxContainer/Setting/MarginContainer/Display/ThemeOptions" to="." method="set_settings"]
+[connection signal="pressed" from="Save/Button" to="." method="save"]

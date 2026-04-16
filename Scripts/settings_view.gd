@@ -43,35 +43,77 @@ var DEFAULT_OPTIONS = {
 	"default_collapse": false,
 	"theme_options": "default"
 }
-var settings = DEFAULT_OPTIONS
+var settings: ConfigFile = ConfigFile.new()
 
 func _ready() -> void:
 	default_save_file_location.text = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 	default_image_location.text = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
+	load_settings()
+	#save()
 
-func get_settings():
+func set_settings(_args=0):
 	# --- defaults ---
 	var status = default_status.get_item_text(default_status.get_selected_id())
-	settings["default_status"] = status.split(": ")[1]
-	settings["default_auto_track"] = auto_track.button_pressed
+	settings.set_value("defaults", "default_status", status.split(": ")[1])
+	settings.set_value("defaults", "default_auto_track", auto_track.button_pressed)
 	var schedule = default_schedule.get_item_text(default_schedule.get_selected_id())
-	settings["default_release_schedule"] = schedule.split(": ")[1]
+	settings.set_value("defaults", "default_release_schedule", schedule.split(": ")[1])
 	
 	# --- saving ---
-	settings["default_save_location"] = default_save_file_location.text
-	settings["default_image_location"] = default_image_location.text
-	settings["autosave"] = auto_save.button_pressed
-	settings["autosave_interval"] = autosave_freq.value
-	settings["save_on_exit_prompt"] = soe_prompt.button_pressed
-	settings["unsaved_warning_timer"] = warn_freq.value
+	settings.set_value("saving", "default_save_location", default_save_file_location.text)
+	settings.set_value("saving", "default_image_location", default_image_location.text)
+	settings.set_value("saving", "autosave", auto_save.button_pressed)
+	settings.set_value("saving", "autosave_interval", autosave_freq.value)
+	settings.set_value("saving", "save_on_exit_prompt", soe_prompt.button_pressed)
+	settings.set_value("saving", "unsaved_warning_timer", warn_freq.value)
 	
 	# --- display ---
-	settings["default_collapse"] = load_tree_collapsed.button_pressed
+	settings.set_value("display", "default_collapse", load_tree_collapsed.button_pressed)
 	var curr_theme = theme_options.get_item_text(theme_options.get_selected_id())
-	settings["theme_options"] = curr_theme.split(": ")[1]
+	settings.set_value("display", "theme_options", curr_theme.split(": ")[1])
 	
 	return settings
 
+
+func load_settings():
+	# --- defaults ---
+	var err = SaveManager.load_settings()
+	if err != OK:
+		settings = SaveManager.default_settings()
+	else:
+		settings = err
+	
+	var status = settings.get_value("defaults", "default_status", "")
+	for i in default_status.item_count:
+		if default_status.get_item_text(i).ends_with(status):
+			default_status.select(i)
+			break
+	auto_track.button_pressed = settings.get_value("defaults", "default_auto_track", false)
+	var schedule = settings.get_value("defaults", "default_release_schedule", "")
+	for i in default_schedule.item_count:
+		if default_schedule.get_item_text(i).ends_with(schedule):
+			default_schedule.select(i)
+			break
+
+	# --- saving ---
+	default_save_file_location.text = settings.get_value("saving", "default_save_location", "")
+	default_image_location.text = settings.get_value("saving", "default_image_location", "")
+	auto_save.button_pressed = settings.get_value("saving", "autosave", false)
+	autosave_freq.value = settings.get_value("saving", "autosave_interval", 5)
+	soe_prompt.button_pressed = settings.get_value("saving", "save_on_exit_prompt", false)
+	warn_freq.value = settings.get_value("saving", "unsaved_warning_timer", 60)
+
+	# --- display ---
+	load_tree_collapsed.button_pressed = settings.get_value("display", "default_collapse", false)
+	var selected_theme = settings.get_value("display", "theme_options", "")
+	for i in theme_options.item_count:
+		if theme_options.get_item_text(i).ends_with(selected_theme):
+			theme_options.select(i)
+			break
+
+func save():
+	set_settings()
+	SaveManager.save_settings(settings)
 
 #region Tabbing Logic
 
