@@ -2,6 +2,7 @@ extends Node
 
 
 var current_settings: ConfigFile
+signal saved()
 
 
 func _ready() -> void:
@@ -17,6 +18,7 @@ func save(path: String):
 		var data_as_json = JSON.stringify(data, "\t", false)
 		savefile.store_string(data_as_json)
 		savefile.close()
+		saved.emit()
 
 
 func default_settings():
