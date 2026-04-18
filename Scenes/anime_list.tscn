@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://xwn7d20vcjgp"]
+[gd_scene load_steps=21 format=3 uid="uid://xwn7d20vcjgp"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/new_list_confirm.gd" id="12_dc1qg"]
 [ext_resource type="PackedScene" uid="uid://dnjxphmutce4" path="res://Scenes/settings_view.tscn" id="13_wonr1"]
 [ext_resource type="Script" path="res://Scripts/possible_filter_genres.gd" id="16_xy5jm"]
+[ext_resource type="Script" path="res://Scripts/exit_confirm.gd" id="17_nx5um"]
 [ext_resource type="PackedScene" uid="uid://cf1o8eqcg1kku" path="res://Scenes/save_warn.tscn" id="18_we7a1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2l"]
@@ -273,6 +274,21 @@ size_flags_vertical = 0
 wait_time = 10.0
 autostart = true
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+
+[node name="Save_Warn" parent="MarginContainer" instance=ExtResource("18_we7a1")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tooltip_text = "You haven't saved yet. Unsaved changes can be lost!"
+
 [node name="Panel2" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -281,6 +297,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"TransparentPanel"
 script = ExtResource("12_dc1qg")
 
 [node name="New List Confirm" type="CenterContainer" parent="Panel2"]
@@ -323,6 +340,51 @@ max_length = 30
 expand_to_text_length = true
 
 [node name="Yes" type="Button" parent="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Yes"
+
+[node name="Exit Confirm" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"TransparentPanel"
+script = ExtResource("17_nx5um")
+
+[node name="Exit Confirm" type="CenterContainer" parent="Exit Confirm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Exit Confirm/Exit Confirm"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Exit Confirm/Exit Confirm/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Are You Sure You Want To Exit?
+Any unsaved changes will be lost."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="FlowContainer" parent="Exit Confirm/Exit Confirm/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+alignment = 1
+
+[node name="No" type="Button" parent="Exit Confirm/Exit Confirm/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "No"
+
+[node name="Yes" type="Button" parent="Exit Confirm/Exit Confirm/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Yes"
@@ -371,21 +433,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Filter Selected Genres"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -42.0
-offset_bottom = 42.0
-grow_horizontal = 0
-
-[node name="Save_Warn" parent="MarginContainer" instance=ExtResource("18_we7a1")]
-layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-tooltip_text = "You haven't saved yet. Unsaved changes can be lost!"
-
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_tab_container_tab_changed"]
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/List Stats/list_stats_view" method="_on_tab_container_tab_changed"]
 [connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/save" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_file_dialog_file_selected"]
@@ -400,4 +447,6 @@ tooltip_text = "You haven't saved yet. Unsaved changes can be lost!"
 [connection signal="timeout" from="Timer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_timer_timeout"]
 [connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/No" to="Panel2" method="_on_no_pressed"]
 [connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/Yes" to="Panel2" method="_on_yes_pressed"]
+[connection signal="pressed" from="Exit Confirm/Exit Confirm/VBoxContainer/HBoxContainer/No" to="Exit Confirm" method="_on_no_pressed"]
+[connection signal="pressed" from="Exit Confirm/Exit Confirm/VBoxContainer/HBoxContainer/Yes" to="Exit Confirm" method="_on_yes_pressed"]
 [connection signal="pressed" from="Filter Genres/MarginContainer/VBoxContainer/SelectGenres" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FilterGenreMenuButton" method="_on_select_genres_pressed"]
