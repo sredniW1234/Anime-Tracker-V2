@@ -8,6 +8,9 @@ var save_location = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_popup().id_pressed.connect(file_menu_pressed)
+	save.current_dir = SaveManager.current_settings.get_value("saving", "default_save_location", "")
+	load_diag.current_dir = SaveManager.current_settings.get_value("saving", "default_save_location", "")
+	
 
 func file_menu_pressed(id: int) -> void:
 	match id:

@@ -81,7 +81,7 @@ func load_settings():
 	if err != OK:
 		settings = SaveManager.default_settings()
 	else:
-		settings = err
+		settings = SaveManager.current_settings
 	
 	var status = settings.get_value("defaults", "default_status", "")
 	for i in default_status.item_count:

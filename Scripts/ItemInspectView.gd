@@ -47,6 +47,8 @@ func _ready() -> void:
 	Manager.connect("selected_changed", load_view)
 	date_started.connect("date_selected", start_date_selected)
 	date_ended.connect("date_selected", end_date_selected)
+	load_anime_picture.current_dir = SaveManager.current_settings.get_value("saving", "default_image_location", "")
+
 
 
 # Grab the selected genres and set the item's genre
@@ -119,7 +121,7 @@ func load_view(current_item: GeneralItem):
 	auto_track_toggle.button_pressed = item.auto_track
 	date_started.text = item.date_started
 	date_ended.text = item.date_ended
-	release_schedule_option.select(0)
+	#release_schedule_option.select(0)
 	notes.text = item.notes
 	load_genres()
 	#set_genres()
@@ -220,6 +222,15 @@ func _update_ongoing_visibility() -> void:
 	spacer_3.visible = is_ongoing
 	release_started.visible = is_ongoing
 	release_count.visible = is_ongoing
+	
+	if item and item.status == "ongoing":
+		var default_schedule = SaveManager.current_settings.get_value("defaults", "default_release_schedule", "")
+		for sche in release_schedule_option.item_count:
+			if default_schedule in release_schedule_option.get_item_text(sche):
+				release_schedule_option.select(sche)
+				break
+			else:
+				release_schedule_option.select(0)
 
 func _on_status_dropdown_item_selected(index: int) -> void:
 	if is_instance_of(item, SeasonItem):
@@ -232,8 +243,6 @@ func _on_status_dropdown_item_selected(index: int) -> void:
 		item.status = Manager.POSSIBLE_BOOK_STATUS[index]
 		item.update_data()
 	_update_ongoing_visibility()
-	if item and item.status == "ongoing":
-		release_schedule_option.select(0)
 	if item:
 		item.date_modified = Time.get_unix_time_from_system()
 

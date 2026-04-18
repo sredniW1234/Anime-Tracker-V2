@@ -95,7 +95,7 @@ popup/item_1/id = 1
 popup/item_2/text = "Default Status: On Hold"
 popup/item_2/id = 2
 popup/item_3/text = "Default Status: Dropped"
-popup/item_3/id = 4
+popup/item_3/id = 3
 popup/item_4/text = "Default Status: None"
 popup/item_4/id = 4
 

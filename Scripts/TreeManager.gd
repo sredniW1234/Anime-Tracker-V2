@@ -23,9 +23,13 @@ func _ready() -> void:
 			var content = file.get_as_text()
 			var data = JSON.parse_string(content)
 			Manager.load_tree.emit(data)
+			collapsed = SaveManager.current_settings.get_value("display", "default_collapse", false)
+			if collapsed:
+				collapse_tree()
 		Manager.save_location = save_location
 	else:
 		create_tree()
+
 
 func create_tree():
 	clear()
@@ -72,7 +76,6 @@ func add_item(parent: GeneralItem, item_name: String):
 		Manager.list[Manager.list.keys()[parent.parent.get_index()]].append(item)
 		if "children" in parent:
 			parent.children.append(item)
-	
 	item.update_data()
 	parent.update_data()
 	scroll_to_item(item.tree_item)
@@ -172,13 +175,14 @@ func apply_filters():
 				any_child_visible = true
 				break
 		item.tree_item.visible = (status_match and genre_match) or any_child_visible
-		
 
+func collapse_tree():
+	for item in Manager.ordered_list_keys:
+		item.tree_item.set_collapsed_recursive(collapsed)
 
 func _on_toggle_collapse_pressed() -> void:
 	collapsed = not collapsed
-	for item in Manager.ordered_list_keys:
-		item.tree_item.set_collapsed_recursive(collapsed)
+	collapse_tree()
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:

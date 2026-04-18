@@ -4,6 +4,10 @@ extends Node
 var current_settings: ConfigFile
 
 
+func _ready() -> void:
+	load_settings()
+
+
 func save(path: String):
 	if path:
 		var savefile = FileAccess.open(path, FileAccess.WRITE)
@@ -44,6 +48,7 @@ func load_settings():
 		return err
 	
 	current_settings = loaded_settings
+	return OK
 
 
 func save_settings(settings: ConfigFile):
