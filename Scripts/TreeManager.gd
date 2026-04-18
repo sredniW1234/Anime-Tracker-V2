@@ -58,7 +58,7 @@ func create_tree():
 	root_item.create(root, Manager.list_name)
 
 # Create and add the item to the list
-func add_item(parent: GeneralItem, item_name: String):
+func add_item(parent: GeneralItem, item_name: String, bypass_defaults=false):
 	var item: GeneralItem = Manager.TYPES[Manager.add_type].new()
 	
 	if parent.tree_item == root_item.tree_item:  # First level (Series Name)
@@ -76,6 +76,13 @@ func add_item(parent: GeneralItem, item_name: String):
 		Manager.list[Manager.list.keys()[parent.parent.get_index()]].append(item)
 		if "children" in parent:
 			parent.children.append(item)
+		
+	# --- set up defaults from settings ---
+	if not bypass_defaults:
+		item.status = SaveManager.current_settings.get_value("defaults", "default_status", item.status).to_lower()
+		if item.status == "none":
+			item.status = ""
+		item.auto_track = SaveManager.current_settings.get_value("defaults", "default_auto_track", item.auto_track)
 	item.update_data()
 	parent.update_data()
 	scroll_to_item(item.tree_item)
@@ -126,7 +133,7 @@ func load_item(item_data: Dictionary, parent = null):
 		Manager.add_type = 1
 	elif item_data.get("type") == "book":
 		Manager.add_type = 2
-	var item = add_item(parent, item_data["item_name"])
+	var item = add_item(parent, item_data["item_name"], true)
 	for key in item_data.keys():
 		if key in item and key != "children":
 			item.set(key, item_data[key])

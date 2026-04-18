@@ -45,14 +45,6 @@ func create(item_parent: TreeItem, _item_name: String) -> TreeItem:
 	item_name = _item_name
 	index = tree_item.get_index()
 	name = item_name
-	
-	# --- set up defaults from settings ---
-	status = SaveManager.current_settings.get_value("defaults", "default_status", status).to_lower()
-	if status == "none":
-		status = ""
-	auto_track = SaveManager.current_settings.get_value("defaults", "default_auto_track", auto_track)
-	
-	
 	return tree_item
 
 
