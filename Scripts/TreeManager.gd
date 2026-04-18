@@ -52,6 +52,7 @@ func create_tree():
 	Manager.ordered_list_keys = []
 	Manager.currently_selected = null
 	Manager.save_location = ""
+	Manager.made_changes = false
 	tab_container.current_tab = 0
 	root = create_item()
 	root_item = GeneralItem.new()
@@ -91,6 +92,7 @@ func add_item(parent: GeneralItem, item_name: String, bypass_defaults=false):
 
 func _on_add_pressed() -> void:
 	self.add_item(Manager.currently_selected if Manager.currently_selected else root_item, "CHANGE ME!")
+	Manager.made_changes = true
 
 
 func _on_item_selected() -> void:

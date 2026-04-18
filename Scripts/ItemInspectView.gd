@@ -4,6 +4,7 @@ var item: GeneralItem = null
 var episodes: float = 0
 var total_episodes: float = 0
 var selected_genres: Array[String] = []
+var loading: bool = false
 
 #region Row 1
 @onready var season_name: LineEdit = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HSplitContainer/SeasonName
@@ -48,9 +49,6 @@ func _ready() -> void:
 	date_started.connect("date_selected", start_date_selected)
 	date_ended.connect("date_selected", end_date_selected)
 	load_anime_picture.current_dir = SaveManager.current_settings.get_value("saving", "default_image_location", "")
-
-
-
 # Grab the selected genres and set the item's genre
 func set_genres():
 	selected_genres = []
@@ -103,8 +101,14 @@ func load_genres():
 		possible_genres.add_child(genre_button)
 
 
+func changes_made():
+	if not loading:
+		Manager.made_changes = true
+	
+
 # Load the insepct view
 func load_view(current_item: GeneralItem):
+	loading = true
 	item = current_item
 	item.update_data()
 	season_name.text = item.item_name
@@ -166,7 +170,8 @@ func load_view(current_item: GeneralItem):
 		for status in Manager.POSSIBLE_BOOK_STATUS:
 			status_dropdown.add_item("Status: " + status.capitalize())
 		status_dropdown.select(Manager.POSSIBLE_BOOK_STATUS.find(item.status))
-
+	loading = false
+	
 
 func _on_rating_slider_value_changed(value: float) -> void:
 	# E.g. 0.0 instead of 0
@@ -174,11 +179,13 @@ func _on_rating_slider_value_changed(value: float) -> void:
 	if item:
 		item.rating = value
 		item.update_data()
+		changes_made()
 
 
 func _on_season_name_text_changed(new_text: String) -> void:
 	if item:
 		item.item_name = new_text
+		changes_made()
 
 
 func _on_current_watch_value_changed(value: float) -> void:
@@ -194,7 +201,7 @@ func _on_current_watch_value_changed(value: float) -> void:
 		
 	progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 	progress_bar.value *= 100
-
+	changes_made()
 
 func _on_total_watch_value_changed(value: float) -> void:
 	if is_instance_of(item, SeasonItem):
@@ -205,16 +212,19 @@ func _on_total_watch_value_changed(value: float) -> void:
 		
 	progress_bar.value = episodes/(total_episodes if total_episodes != 0 else 1.0)
 	progress_bar.value *= 100
+	changes_made()
 
 
 func _on_text_edit_text_changed() -> void:
 	if item:
 		item.notes = notes.text
+		changes_made()
 
 
 func _on_auto_track_toggle_toggled(toggled_on: bool) -> void:
 	if item:
 		item.auto_track = toggled_on
+		changes_made()
 
 func _update_ongoing_visibility() -> void:
 	var is_ongoing = item and item.status == "ongoing"
@@ -242,9 +252,8 @@ func _on_status_dropdown_item_selected(index: int) -> void:
 	elif is_instance_of(item, BookItem):
 		item.status = Manager.POSSIBLE_BOOK_STATUS[index]
 		item.update_data()
+	changes_made()
 	_update_ongoing_visibility()
-	if item:
-		item.date_modified = Time.get_unix_time_from_system()
 
 
 # Get Schedule in unix time
@@ -252,11 +261,13 @@ func _on_release_schedule_option_item_selected(index: int) -> void:
 	if item:
 		var schedule = release_schedule_option.get_item_text(index).split(": ")[1]
 		item.release_schedule = Manager.SCHEDULE_TO_UNIX[schedule.to_lower()]
+		changes_made()
 
 
 func _on_add_genres_pressed() -> void:
 	set_genres()
 	genres_panel.hide()
+	changes_made()
 
 
 func _on_show_genres_pressed() -> void:
@@ -266,11 +277,13 @@ func _on_show_genres_pressed() -> void:
 func start_date_selected(date, _unix):
 	if item:
 		item.date_started = date
+		changes_made()
 
 
 func end_date_selected(date, _unix):
 	if item:
 		item.date_ended = date
+		changes_made()
 
 
 func _on_rewatch_spinbox_value_changed(value: float) -> void:
@@ -281,21 +294,25 @@ func _on_rewatch_spinbox_value_changed(value: float) -> void:
 			item.rewatched = value
 		elif is_instance_of(item, SeasonItem):
 			item.episodes_rewatched = value
+		changes_made()
 
 
 func _on_release_count_value_changed(value: float) -> void:
 	if is_instance_of(item, SeasonItem):
 		item.max_episodes = value
+		changes_made()
 
 
 func _on_release_started_date_selected(date: Variant, unix: Variant) -> void:
 	if is_instance_of(item, SeasonItem):
 		item.date_release_started = date
+		changes_made()
 
 
 func _on_favorite_toggle_toggled(toggled_on: bool) -> void:
 	if item:
 		item.is_favorite = toggled_on
+		changes_made()
 
 
 func _on_anime_picture_button_pressed() -> void:
@@ -312,6 +329,7 @@ func load_icon(path: String):
 			var tex = ImageTexture.create_from_image(img)
 			anime_picture_button.icon = tex
 			#anime_picture.show()
+			changes_made()
 			return
 	var tex = load("res://Assets/icons/wallpaper.svg")
 	anime_picture_button.icon = tex

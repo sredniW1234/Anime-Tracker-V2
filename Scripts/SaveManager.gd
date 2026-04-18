@@ -19,6 +19,7 @@ func save(path: String):
 		savefile.store_string(data_as_json)
 		savefile.close()
 		saved.emit()
+		Manager.made_changes = false
 
 
 func default_settings():

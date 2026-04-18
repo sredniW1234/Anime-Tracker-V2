@@ -45,6 +45,7 @@ func create(item_parent: TreeItem, _item_name: String) -> TreeItem:
 	item_name = _item_name
 	index = tree_item.get_index()
 	name = item_name
+	Manager.connect("changes_made", update_date_modified)
 	return tree_item
 
 
@@ -64,6 +65,7 @@ func move_before():
 		var prev_item = list[index+1]
 		list[index] = prev_item
 		list[index+1] = curr_item
+		Manager.made_changes = true
 
 
 # Move this item after the specified TreeItem
@@ -87,6 +89,7 @@ func move_after():
 			var next_item = list[index-1]
 			list[index] = next_item
 			list[index-1] = curr_item
+			Manager.made_changes = true
 
 
 # Unparents the item to the root
@@ -104,6 +107,7 @@ func unparent():
 			
 			while index != correct_index:
 				move_before()
+			Manager.made_changes = true
 			update_data()
 
 
@@ -124,6 +128,7 @@ func re_parent():  # reparent already exists but we want new functionality. I th
 				Manager.list[new_parent].append(self)
 				if "children" in new_parent:
 					new_parent.children.append(self)
+				Manager.made_changes = true
 				update_data()
 
 
@@ -141,6 +146,7 @@ func delete():
 			Manager.list[Manager.ordered_list_keys[parent.get_index()]].remove_at(index)
 		tree_item.get_tree().deselect_all()
 		tree_item.free()
+		Manager.made_changes = true
 		queue_free()
 
 
@@ -157,6 +163,9 @@ func set_icon():
 			else:
 				#print(tex.get_width(), (128.0/tex.get_height()))
 				tree_item.set_icon_max_width(0, int(tex.get_width() * (128.0/tex.get_height())))
+
+func update_date_modified():
+	date_modified = Time.get_unix_time_from_system()
 
 # needed
 func update_data():
