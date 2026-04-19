@@ -25,24 +25,6 @@ extends Control
 @onready var load_tree_collapsed: CheckButton = $"HBoxContainer/Setting/MarginContainer/Display/Load Tree Collapsed"
 @onready var theme_options: OptionButton = $HBoxContainer/Setting/MarginContainer/Display/ThemeOptions
 
-var DEFAULT_OPTIONS = {
-	# Defaults
-	"default_status": "watching",
-	"default_auto_track": true,
-	"default_release_schedule": "weekly",
-	
-	# Saving
-	"default_save_location": OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP),
-	"default_image_location": OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP),
-	"autosave": false,
-	"autosave_interval": 300,
-	"save_on_exit_prompt": true,
-	"unsaved_warning_timer": 120,
-	
-	# Display
-	"default_collapse": false,
-	"theme_options": "default"
-}
 var settings: ConfigFile = ConfigFile.new()
 
 func _ready() -> void:
@@ -99,9 +81,9 @@ func load_settings():
 	default_save_file_location.text = settings.get_value("saving", "default_save_location", "")
 	default_image_location.text = settings.get_value("saving", "default_image_location", "")
 	auto_save.button_pressed = settings.get_value("saving", "autosave", false)
-	autosave_freq.value = settings.get_value("saving", "autosave_interval", 5)
+	autosave_freq.value = settings.get_value("saving", "autosave_interval", 300)
 	soe_prompt.button_pressed = settings.get_value("saving", "save_on_exit_prompt", false)
-	warn_freq.value = settings.get_value("saving", "unsaved_warning_timer", 60)
+	warn_freq.value = settings.get_value("saving", "unsaved_warning_timer", 120)
 
 	# --- display ---
 	load_tree_collapsed.button_pressed = settings.get_value("display", "default_collapse", false)
