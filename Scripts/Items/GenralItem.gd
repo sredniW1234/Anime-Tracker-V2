@@ -165,7 +165,8 @@ func set_icon():
 				tree_item.set_icon_max_width(0, int(tex.get_width() * (128.0/tex.get_height())))
 
 func update_date_modified():
-	date_modified = Time.get_unix_time_from_system()
+	if self == Manager.currently_selected:
+		date_modified = Time.get_unix_time_from_system()
 
 # needed
 func update_data():

@@ -266,6 +266,7 @@ scale = Vector2(0.453333, 0.453333)
 texture = ExtResource("2_03v5c")
 
 [node name="Autosave" parent="PanelContainer/MarginContainer" instance=ExtResource("15_0s8q4")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -281,7 +282,6 @@ wait_time = 10.0
 autostart = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -291,6 +291,7 @@ offset_bottom = 42.0
 grow_horizontal = 0
 
 [node name="Save_Warn" parent="MarginContainer" instance=ExtResource("18_we7a1")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1

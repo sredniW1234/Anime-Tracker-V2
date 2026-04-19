@@ -7,12 +7,13 @@ extends Control
 func _ready() -> void:
 	Manager.connect("new_tree", reset)
 	Manager.connect("load_tree", reset)
+	SaveManager.connect("saved", reset)
 	reset()
 
 
 func reset():
-	print(SaveManager.current_settings)
 	autosave_timer.start(SaveManager.current_settings.get_value("saving", "autosave_interval", 300))
+	hide()
 
 
 func _on_autosave_timer_timeout() -> void:
@@ -21,3 +22,4 @@ func _on_autosave_timer_timeout() -> void:
 		if Manager.save_location:
 			SaveManager.save(Manager.save_location)
 			animation_player.play("Autosave")
+			show()
