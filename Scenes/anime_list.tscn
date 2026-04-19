@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xwn7d20vcjgp"]
+[gd_scene load_steps=22 format=3 uid="uid://xwn7d20vcjgp"]
 
 [ext_resource type="Script" path="res://Scripts/TreeManager.gd" id="1_3oy5k"]
 [ext_resource type="Texture2D" uid="uid://dx6cvx1rptw15" path="res://Assets/icons/plus.svg" id="1_52rcf"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d17y3ge8ar1r3" path="res://Scenes/context_menu.tscn" id="9_uxrnn"]
 [ext_resource type="Script" path="res://Scripts/new_list_confirm.gd" id="12_dc1qg"]
 [ext_resource type="PackedScene" uid="uid://dnjxphmutce4" path="res://Scenes/settings_view.tscn" id="13_wonr1"]
+[ext_resource type="PackedScene" uid="uid://chvilxywhx6yq" path="res://Scenes/autosave.tscn" id="15_0s8q4"]
 [ext_resource type="Script" path="res://Scripts/possible_filter_genres.gd" id="16_xy5jm"]
 [ext_resource type="Script" path="res://Scripts/exit_confirm.gd" id="17_nx5um"]
 [ext_resource type="PackedScene" uid="uid://cf1o8eqcg1kku" path="res://Scenes/save_warn.tscn" id="18_we7a1"]
@@ -264,6 +265,11 @@ position = Vector2(363, 280)
 scale = Vector2(0.453333, 0.453333)
 texture = ExtResource("2_03v5c")
 
+[node name="Autosave" parent="PanelContainer/MarginContainer" instance=ExtResource("15_0s8q4")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
 [node name="ContextMenu" parent="PanelContainer" instance=ExtResource("9_uxrnn")]
 visible = false
 layout_mode = 2
@@ -275,6 +281,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
