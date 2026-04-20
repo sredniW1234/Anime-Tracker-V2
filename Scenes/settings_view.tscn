@@ -237,12 +237,17 @@ text = "Load Tree Collapsed"
 layout_mode = 2
 size_flags_horizontal = 0
 selected = 0
-item_count = 3
+item_count = 5
 popup/item_0/text = "Theme: Default"
 popup/item_1/text = "Theme: Blood Moon"
 popup/item_1/id = 1
 popup/item_2/text = "Theme: Moonlit Sakura"
 popup/item_2/id = 2
+popup/item_3/text = "Theme: Neon Cyber"
+popup/item_3/id = 3
+popup/item_4/text = "Theme: test"
+popup/item_4/id = 4
+popup/item_4/disabled = true
 
 [node name="Save" type="MarginContainer" parent="."]
 layout_mode = 1
