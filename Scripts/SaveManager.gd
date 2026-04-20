@@ -3,6 +3,7 @@ extends Node
 
 var current_settings: ConfigFile
 signal saved()
+signal settings_changed()
 
 
 func _ready() -> void:
@@ -57,3 +58,4 @@ func load_settings():
 func save_settings(settings: ConfigFile):
 	settings.save("user://settings.cfg")
 	current_settings = settings
+	settings_changed.emit()

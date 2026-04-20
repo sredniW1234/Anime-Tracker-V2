@@ -21,6 +21,7 @@ config/icon="res://Icon.png"
 
 Manager="*res://Scripts/GeneralManager.gd"
 SaveManager="*res://Scripts/SaveManager.gd"
+ThemeManager="*res://Scripts/ThemeManager.gd"
 
 [editor_plugins]
 
