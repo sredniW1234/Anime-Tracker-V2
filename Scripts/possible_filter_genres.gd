@@ -24,6 +24,6 @@ func _ready() -> void:
 
 func get_genres():
 	actively_selected = []
-	for child in get_children().slice(1):
+	for child in get_children():
 		if child.button_pressed:
 			actively_selected.append(child.text.to_lower())
