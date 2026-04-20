@@ -34,7 +34,7 @@ var is_favorite: bool = false: # Is this item favorited
 		is_favorite = favortie
 		update_data()
 		
-var genres: Array[String] = []
+var genres: Array = []
 var auto_track: bool = true
 
 
