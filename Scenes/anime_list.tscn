@@ -352,6 +352,50 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Yes"
 
+[node name="Filter Genres" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"TransparentPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Filter Genres"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Filter Genres/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Filter Genres/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Possible Genres" type="HFlowContainer" parent="Filter Genres/MarginContainer/VBoxContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+script = ExtResource("16_xy5jm")
+
+[node name="SelectGenres" type="Button" parent="Filter Genres/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Filter Selected Genres"
+
 [node name="Exit Confirm" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -397,50 +441,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Yes"
 
-[node name="Filter Genres" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"TransparentPanel"
-
-[node name="MarginContainer" type="MarginContainer" parent="Filter Genres"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Filter Genres/MarginContainer"]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Filter Genres/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Possible Genres" type="HFlowContainer" parent="Filter Genres/MarginContainer/VBoxContainer/ScrollContainer"]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-alignment = 1
-script = ExtResource("16_xy5jm")
-
-[node name="SelectGenres" type="Button" parent="Filter Genres/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Filter Selected Genres"
-
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_tab_container_tab_changed"]
 [connection signal="tab_changed" from="PanelContainer/MarginContainer/TabContainer" to="PanelContainer/MarginContainer/TabContainer/List Stats/list_stats_view" method="_on_tab_container_tab_changed"]
 [connection signal="file_selected" from="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton/save" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FileMenuButton" method="_on_file_dialog_file_selected"]
@@ -455,6 +455,6 @@ text = "Filter Selected Genres"
 [connection signal="timeout" from="Timer" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/Tree" method="_on_timer_timeout"]
 [connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/No" to="Panel2" method="_on_no_pressed"]
 [connection signal="pressed" from="Panel2/New List Confirm/VBoxContainer/HBoxContainer/HBoxContainer/Yes" to="Panel2" method="_on_yes_pressed"]
+[connection signal="pressed" from="Filter Genres/MarginContainer/VBoxContainer/SelectGenres" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FilterGenreMenuButton" method="_on_select_genres_pressed"]
 [connection signal="pressed" from="Exit Confirm/Exit Confirm/VBoxContainer/HBoxContainer/No" to="Exit Confirm" method="_on_no_pressed"]
 [connection signal="pressed" from="Exit Confirm/Exit Confirm/VBoxContainer/HBoxContainer/Yes" to="Exit Confirm" method="_on_yes_pressed"]
-[connection signal="pressed" from="Filter Genres/MarginContainer/VBoxContainer/SelectGenres" to="PanelContainer/MarginContainer/TabContainer/View List/VBoxContainer/MenuBar/MarginContainer/HBoxContainer/FilterGenreMenuButton" method="_on_select_genres_pressed"]

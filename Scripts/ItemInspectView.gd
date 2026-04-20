@@ -265,9 +265,10 @@ func _on_release_schedule_option_item_selected(index: int) -> void:
 
 
 func _on_add_genres_pressed() -> void:
-	set_genres()
-	genres_panel.hide()
-	changes_made()
+	if item:
+		set_genres()
+		genres_panel.hide()
+		changes_made()
 
 
 func _on_show_genres_pressed() -> void:
