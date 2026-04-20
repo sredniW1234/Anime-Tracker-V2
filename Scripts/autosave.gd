@@ -11,7 +11,7 @@ func _ready() -> void:
 	reset()
 
 
-func reset():
+func reset(_params=[]):
 	autosave_timer.start(SaveManager.current_settings.get_value("saving", "autosave_interval", 300))
 	hide()
 
