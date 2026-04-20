@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=35 format=3 uid="uid://do8xhuf0rh4y7"]
+[gd_resource type="Theme" load_steps=39 format=3 uid="uid://do8xhuf0rh4y7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnxvk"]
 content_margin_left = 4.0
@@ -305,6 +305,38 @@ bg_color = Color(0.0836, 0.09108, 0.11, 0.627451)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wq36g"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svn50"]
+bg_color = Color(0.184314, 0.203922, 0.25098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vujkp"]
+bg_color = Color(0.309804, 0.639216, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nr2s"]
+bg_color = Color(0.309804, 0.639216, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ec2lr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.117647, 0.129412, 0.156863, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 Button/colors/font_color = Color(0.901961, 0.917647, 0.941176, 1)
 Button/colors/font_disabled_color = Color(0.368627, 0.4, 0.458824, 1)
@@ -354,3 +386,7 @@ TransparentPanel/styles/panel = SubResource("StyleBoxFlat_ggbbc")
 TransparentPanelContainer/base_type = &"Panel"
 TransparentPanelContainer/styles/panel = SubResource("StyleBoxFlat_yygw6")
 Tree/styles/panel = SubResource("StyleBoxEmpty_wq36g")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_svn50")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_vujkp")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_8nr2s")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ec2lr")
