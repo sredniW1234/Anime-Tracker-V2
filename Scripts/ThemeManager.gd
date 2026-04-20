@@ -147,6 +147,9 @@ func create_theme():
 	hover_button.set_corner_radius_all(6)
 	set_content_margins(hover_button)
 	
+	var hover_pressed = hover_button.duplicate(true)
+	hover_button.border_color = accent_color
+	
 	var normal_button: StyleBoxFlat = normal.duplicate(true)
 	normal_button.set_corner_radius_all(6)
 	var pressed: StyleBoxFlat = focus.duplicate(true)
@@ -155,6 +158,7 @@ func create_theme():
 	theme.set_stylebox("disabled", "Button", disabled_button)
 	theme.set_stylebox("focus", "Button", StyleBoxEmpty.new())
 	theme.set_stylebox("hover", "Button", hover_button)
+	theme.set_stylebox("hover_pressed", "Button", hover_pressed)
 	theme.set_stylebox("normal", "Button", normal_button)
 	theme.set_stylebox("pressed", "Button", pressed)
 	theme.set_color("font_color", "Button", primary_font_color)
